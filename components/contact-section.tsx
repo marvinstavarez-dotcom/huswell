@@ -127,7 +127,7 @@ export default function ContactSection() {
                   rows={5}
                   required
                   placeholder="Tell us about your packaging project — box type, quantity, finish, target date…"
-                  className="w-full resize-y border-b border-line bg-transparent py-3 text-base text-ink placeholder:text-mute focus:border-accent focus:outline-none"
+                  className="w-full resize-y border border-line bg-surface px-4 py-3 text-base text-ink placeholder:text-mute focus:border-accent focus:outline-none"
                 />
               </div>
               {status === "sent" && (
@@ -196,7 +196,7 @@ function Field({
         type={type}
         placeholder={placeholder}
         required={required}
-        className="w-full border-b border-line bg-transparent py-3 text-base text-ink placeholder:text-mute focus:border-accent focus:outline-none"
+        className="w-full border border-line bg-surface px-4 py-3 text-base text-ink placeholder:text-mute focus:border-accent focus:outline-none"
       />
     </div>
   );
