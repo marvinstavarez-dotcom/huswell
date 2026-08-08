@@ -61,9 +61,9 @@ export default function Page() {
             <Link href="/#contact" className="btn-solid-dark">
               Get a free quote
             </Link>
-            <a href="#faqs" className="btn-line-dark">
-              FAQs
-            </a>
+            <Link href="/projects" className="btn-line-dark">
+              Services
+            </Link>
           </div>
         </div>
       </section>
@@ -92,8 +92,8 @@ export default function Page() {
       {/* ---------- ABOUT ---------- */}
       <section className="bg-canvas-alt py-20 md:py-28">
         <div className="mx-auto w-full max-w-6xl px-5 md:px-8">
-          <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-12 lg:gap-20">
-            <div className="lg:col-span-7">
+          <div className="grid grid-cols-1 items-center gap-14 md:grid-cols-12 md:gap-10 lg:gap-20">
+            <div className="md:col-span-7">
               <p className="micro-label mb-6 text-accent-hover">About Huswell Trading</p>
               <h2 className="max-w-2xl text-3xl font-semibold leading-[1.05] tracking-[-0.02em] text-ink md:text-5xl">
                 Best boxes, best branding.
@@ -115,14 +115,14 @@ export default function Page() {
                 </Link>
               </div>
             </div>
-            <div className="lg:col-span-5">
+            <div className="md:col-span-5">
               <div className="border border-line bg-surface">
                 <Image
                   src="/assets/img/about/cover.webp"
                   alt="Huswell Trading — handicrafts exporter and packaging partner"
                   width={1137}
                   height={921}
-                  sizes="(max-width: 1024px) 100vw, 42vw"
+                  sizes="(max-width: 768px) 100vw, 42vw"
                   className="aspect-[4/3] w-full object-cover"
                 />
               </div>
@@ -235,8 +235,8 @@ export default function Page() {
       {/* ---------- STORY + VIDEO ---------- */}
       <section className="border-t border-line bg-canvas-alt pb-24">
         <div className="mx-auto w-full max-w-6xl px-5 py-20 md:px-8 md:py-28">
-          <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-12 lg:gap-20">
-            <div className="lg:col-span-5">
+          <div className="grid grid-cols-1 items-center gap-14 md:grid-cols-12 md:gap-10 lg:gap-20">
+            <div className="md:col-span-5">
               <p className="micro-label mb-6 text-accent-hover">Our journey</p>
               <h2 className="text-3xl font-semibold leading-[1.05] tracking-[-0.02em] text-ink md:text-4xl">
                 From a single workbench to your door.
@@ -256,7 +256,7 @@ export default function Page() {
                 </span>
               </Link>
             </div>
-            <div className="lg:col-span-7">
+            <div className="md:col-span-7">
               <VideoStory />
             </div>
           </div>
@@ -290,8 +290,8 @@ export default function Page() {
       {/* ---------- FAQ ---------- */}
       <section id="faqs" className="border-t border-line bg-canvas-alt py-20 md:py-28">
         <div className="mx-auto w-full max-w-6xl px-5 md:px-8">
-          <div className="grid grid-cols-1 gap-16 lg:grid-cols-12">
-            <div className="lg:col-span-4">
+          <div className="grid grid-cols-1 gap-16 md:grid-cols-12 md:gap-10 lg:gap-16">
+            <div className="md:col-span-4">
               <p className="micro-label mb-6 text-accent-hover">FAQ</p>
               <h2 className="text-3xl font-semibold leading-[1.05] tracking-[-0.02em] text-ink md:text-4xl">
                 Quick answers.
@@ -311,7 +311,7 @@ export default function Page() {
                 .
               </p>
             </div>
-            <div className="lg:col-span-8">
+            <div className="md:col-span-8">
               <div className="grid grid-cols-1 gap-x-16 md:grid-cols-2">
                 {FAQS.map((q, i) => (
                   <details key={q} className="group border-b border-line py-1" open={i === 0}>

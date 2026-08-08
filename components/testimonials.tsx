@@ -25,7 +25,7 @@ export default function TestimonialSlider() {
             <button
               type="button"
               onClick={() => setIndex((index - 1 + TESTIMONIALS.length) % TESTIMONIALS.length)}
-              className="flex h-11 w-11 items-center justify-center border border-ink/30 text-lg text-ink transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] hover:bg-ink hover:text-canvas"
+              className="flex h-12 w-12 items-center justify-center border border-ink/30 text-lg text-ink transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] hover:bg-ink hover:text-canvas"
               aria-label="Previous testimonial"
             >
               &larr;
@@ -33,7 +33,7 @@ export default function TestimonialSlider() {
             <button
               type="button"
               onClick={() => setIndex((index + 1) % TESTIMONIALS.length)}
-              className="flex h-11 w-11 items-center justify-center border border-ink/30 text-lg text-ink transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] hover:bg-ink hover:text-canvas"
+              className="flex h-12 w-12 items-center justify-center border border-ink/30 text-lg text-ink transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] hover:bg-ink hover:text-canvas"
               aria-label="Next testimonial"
             >
               &rarr;

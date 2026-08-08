@@ -41,8 +41,8 @@ export default function ContactSection() {
   return (
     <section id="contact" className="border-t border-line bg-canvas-alt py-20 md:py-28">
       <div className="mx-auto w-full max-w-6xl px-5 md:px-8">
-        <div className="grid grid-cols-1 gap-16 lg:grid-cols-12">
-          <div className="lg:col-span-5">
+        <div className="grid grid-cols-1 gap-16 md:grid-cols-12 md:gap-10 lg:gap-16">
+          <div className="md:col-span-5">
             <p className="micro-label mb-6 text-accent-hover">Contact</p>
             <h2 className="text-3xl font-semibold leading-[1.05] tracking-[-0.02em] text-ink md:text-5xl">
               Let&rsquo;s talk packaging.
@@ -107,7 +107,7 @@ export default function ContactSection() {
             </div>
           </div>
 
-          <div className="lg:col-span-7">
+          <div className="md:col-span-7">
             <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-8 md:grid-cols-2">
               <Field label="Name" name="name" placeholder="Juan Dela Cruz" required />
               <Field label="Email address" name="email" type="email" placeholder="you@company.com" required />

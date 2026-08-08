@@ -61,7 +61,7 @@ export default function Lightbox({
           type="button"
           onClick={onClose}
           aria-label="Close"
-          className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center border border-white/40 text-xl font-medium text-white transition-colors duration-300 hover:bg-white hover:text-black md:right-6 md:top-6"
+          className="absolute right-4 top-4 flex h-12 w-12 items-center justify-center border border-white/40 text-xl font-medium text-white transition-colors duration-300 hover:bg-white hover:text-black md:right-6 md:top-6"
         >
           ×
         </button>
@@ -71,7 +71,7 @@ export default function Lightbox({
               type="button"
               onClick={() => onNext((index - 1 + count) % count)}
               aria-label="Previous image"
-              className="absolute left-4 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center border border-white/40 text-xl text-white transition-colors duration-300 hover:bg-white hover:text-black md:left-6"
+              className="absolute left-4 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center border border-white/40 text-xl text-white transition-colors duration-300 hover:bg-white hover:text-black md:left-6"
             >
               ‹
             </button>
@@ -79,7 +79,7 @@ export default function Lightbox({
               type="button"
               onClick={() => onNext((index + 1) % count)}
               aria-label="Next image"
-              className="absolute right-4 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center border border-white/40 text-xl text-white transition-colors duration-300 hover:bg-white hover:text-black md:right-6"
+              className="absolute right-4 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center border border-white/40 text-xl text-white transition-colors duration-300 hover:bg-white hover:text-black md:right-6"
             >
               ›
             </button>

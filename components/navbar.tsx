@@ -19,7 +19,8 @@ export default function Navbar() {
   const isActive = (href: string) => pathname === href;
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-line bg-canvas/95 backdrop-blur-md">
+    <>
+      <header className="fixed inset-x-0 top-0 z-50 border-b border-line bg-canvas/95 backdrop-blur-md">
       <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-5 md:px-8">
         <Link href="/" className="block" aria-label="Huswell Trading — home">
           <Image
@@ -58,28 +59,34 @@ export default function Navbar() {
         <button
           type="button"
           onClick={() => setOpen(!open)}
-          className="flex h-10 w-10 items-center justify-center md:hidden"
+          className="flex h-12 w-12 items-center justify-center md:hidden"
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
         >
-          <span className="relative block h-3.5 w-6">
+          <span className="relative block h-4 w-6">
             <span
               className={`absolute left-0 top-0 h-px w-full bg-ink transition-transform duration-300 ${
-                open ? "translate-y-[6px] rotate-45" : ""
+                open ? "translate-y-[7px] rotate-45" : ""
+              }`}
+            />
+            <span
+              className={`absolute left-0 top-1/2 h-px w-full -translate-y-1/2 bg-ink transition-opacity duration-300 ${
+                open ? "opacity-0" : ""
               }`}
             />
             <span
               className={`absolute left-0 bottom-0 h-px w-full bg-ink transition-transform duration-300 ${
-                open ? "-translate-y-[6px] -rotate-45" : ""
+                open ? "-translate-y-[7px] -rotate-45" : ""
               }`}
             />
           </span>
         </button>
       </div>
+      </header>
 
       <div
         className={`fixed inset-x-0 top-16 bottom-0 z-40 overflow-y-auto bg-canvas px-6 pt-8 transition-opacity duration-300 md:hidden ${
-          open ? "opacity-100" : "pointer-events-none opacity-0"
+          open ? "opacity-100" : "invisible pointer-events-none opacity-0"
         }`}
       >
         <p className="micro-label mb-4 text-mute">Services</p>
@@ -89,20 +96,20 @@ export default function Navbar() {
               key={s.slug}
               href={`/${s.slug}`}
               onClick={() => setOpen(false)}
-              className="border-b border-line py-3 text-base font-medium text-ink"
+              className="border-b border-line py-3.5 text-base font-medium text-ink"
             >
               {s.label}
             </Link>
           ))}
         </div>
         <p className="micro-label mb-4 mt-8 text-mute">Pages</p>
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col">
           {PAGES.map((p) => (
             <Link
               key={p.href}
               href={p.href}
               onClick={() => setOpen(false)}
-              className="border-b border-line pb-3 text-base font-medium text-ink"
+              className="border-b border-line py-3.5 text-base font-medium text-ink"
             >
               {p.label}
             </Link>
@@ -117,7 +124,7 @@ export default function Navbar() {
           {CONTACT.phone}
         </p>
       </div>
-    </header>
+    </>
   );
 }
 

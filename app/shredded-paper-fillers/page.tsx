@@ -11,8 +11,6 @@ export const metadata: Metadata = {
 };
 
 const GALLERY = [
-  "/assets/img/fillers/filler-01.webp",
-  "/assets/img/fillers/filler-02.webp",
   ...Array.from({ length: 19 }, (_, i) => `/assets/img/fillers/filler-${String(i + 3).padStart(2, "0")}.jpg`),
 ];
 

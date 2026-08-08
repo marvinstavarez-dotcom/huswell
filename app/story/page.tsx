@@ -20,7 +20,7 @@ export default function Page() {
       />
       <section className="border-t border-line bg-canvas py-16 md:py-24">
         <div className="mx-auto w-full max-w-6xl px-5 md:px-8">
-          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
+          <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2 lg:gap-16">
             <div>
               <p className="micro-label mb-5 text-accent-hover">Inside the plant</p>
               <h2 className="text-3xl font-semibold leading-[1.05] tracking-[-0.02em] text-ink md:text-4xl">

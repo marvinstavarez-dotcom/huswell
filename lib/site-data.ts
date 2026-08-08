@@ -110,6 +110,7 @@ export const CONTACT = {
   tiktok: "https://www.tiktok.com/@huswell.trading",
   whatsapp: "https://wa.me/639173183354",
   viber: "viber://chat?number=%2B639173183354",
+  messenger: "https://www.messenger.com/t/423646941093708",
 };
 
 export const SERVICES = [
