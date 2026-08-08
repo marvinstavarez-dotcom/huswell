@@ -6,7 +6,7 @@ const LINKS = [
   { href: "/projects", label: "Projects" },
   { href: "/story", label: "Our Team" },
   { href: "/testimonials", label: "Testimonials" },
-  { href: "/quote", label: "Get a Free Quote" },
+  { href: "/#contact", label: "Get a Free Quote" },
 ];
 
 export default function Footer() {

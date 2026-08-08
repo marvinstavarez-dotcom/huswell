@@ -305,7 +305,7 @@ export default function Page() {
                   {CONTACT.phone}
                 </a>{" "}
                 or{" "}
-                <Link href="/quote" className="underline underline-offset-4 decoration-accent">
+                <Link href="/#contact" className="underline underline-offset-4 decoration-accent">
                   request a quote
                 </Link>
                 .
