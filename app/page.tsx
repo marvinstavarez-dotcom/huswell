@@ -171,7 +171,7 @@ export default function Page() {
                 <div className="md:col-span-3 md:text-right">
                   <Link
                     href={`/${s.slug}`}
-                    className="group inline-flex items-center gap-3 text-[12px] font-medium uppercase tracking-[0.18em] text-accent-hover transition-colors duration-300"
+                    className="btn-line-light"
                   >
                     Explore line
                     <span className="transition-transform duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:translate-x-1">
@@ -197,7 +197,7 @@ export default function Page() {
             </div>
             <Link
               href="/projects"
-              className="group inline-flex items-center gap-3 text-[12px] font-medium uppercase tracking-[0.18em] text-accent-hover transition-colors duration-300"
+              className="btn-line-light"
             >
               View all work
               <span className="transition-transform duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:translate-x-1">
@@ -248,7 +248,7 @@ export default function Page() {
               </p>
               <Link
                 href="/story"
-                className="group mt-8 inline-flex items-center gap-3 text-[12px] font-medium uppercase tracking-[0.18em] text-accent-hover transition-colors duration-300"
+                className="btn-line-light mt-8"
               >
                 Read the full story
                 <span className="transition-transform duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:translate-x-1">
@@ -275,7 +275,7 @@ export default function Page() {
             </div>
             <Link
               href="/testimonials"
-              className="group inline-flex items-center gap-3 text-[12px] font-medium uppercase tracking-[0.18em] text-accent-hover transition-colors duration-300"
+              className="btn-line-light"
             >
               See more testimonials
               <span className="transition-transform duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:translate-x-1">
