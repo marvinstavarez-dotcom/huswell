@@ -108,6 +108,8 @@ export const CONTACT = {
   phoneHref: "tel:+639173183354",
   instagram: "https://www.instagram.com/huswelltrading/",
   tiktok: "https://www.tiktok.com/@huswell.trading",
+  whatsapp: "https://wa.me/639173183354",
+  viber: "viber://chat?number=%2B639173183354",
 };
 
 export const SERVICES = [

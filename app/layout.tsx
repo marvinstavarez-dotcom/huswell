@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import ChatButtons from "@/components/chat-buttons";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -41,6 +42,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Navbar />
         {children}
         <Footer />
+        <ChatButtons />
       </body>
     </html>
   );
