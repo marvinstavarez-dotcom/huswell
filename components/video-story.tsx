@@ -1,21 +1,10 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-
-type Conn = Navigator & { connection?: { effectiveType?: string; saveData?: boolean } };
+import { useRef, useState } from "react";
 
 export default function VideoStory() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = useState(false);
-  const [low, setLow] = useState(false);
-
-  useEffect(() => {
-    const conn = (navigator as Conn).connection;
-    const slow = conn?.saveData || ["slow-2g", "2g", "3g"].includes(conn?.effectiveType ?? "");
-    if (slow || window.matchMedia("(max-width: 480px)").matches) {
-      queueMicrotask(() => setLow(true));
-    }
-  }, []);
 
   return (
     <div className="relative border border-line bg-surface">
@@ -29,10 +18,7 @@ export default function VideoStory() {
         onPlay={() => setPlaying(true)}
         onEnded={() => setPlaying(false)}
       >
-        <source
-          src={low ? "/assets/video/huswell-trading-480p.mp4" : "/assets/video/huswell-trading.mp4"}
-          type="video/mp4"
-        />
+        <source src="/assets/video/huswell-trading.mp4" type="video/mp4" />
         Your browser does not support HTML5 video.
       </video>
       {!playing && (
