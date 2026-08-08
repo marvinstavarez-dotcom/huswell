@@ -9,6 +9,7 @@ import { CONTACT, SERVICES } from "@/lib/site-data";
 const PAGES = [
   { href: "/story", label: "Our Team" },
   { href: "/testimonials", label: "Testimonials" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export default function Navbar() {
@@ -49,7 +50,7 @@ export default function Navbar() {
               {p.label}
             </Link>
           ))}
-          <Link href={CONTACT.quoteMailto} className="btn-solid-light !px-5 !py-2.5">
+          <Link href="/#contact" className="btn-solid-light !px-5 !py-2.5">
             Get a free quote
           </Link>
         </nav>
@@ -107,7 +108,7 @@ export default function Navbar() {
             </Link>
           ))}
         </div>
-        <Link href={CONTACT.quoteMailto} className="btn-solid-light mt-8 w-full">
+        <Link href="/#contact" className="btn-solid-light mt-8 w-full">
           Get a free quote
         </Link>
         <p className="mt-10 pb-8 text-sm text-mute">

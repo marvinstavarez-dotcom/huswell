@@ -39,7 +39,7 @@ export default function Page() {
           </div>
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <p className="text-sm text-mute">Packs: {FILLER_PACKS}</p>
-            <Link href={CONTACT.quoteMailto} className="btn-solid-light">
+            <Link href="/#contact" className="btn-solid-light">
               Order fillers
             </Link>
           </div>

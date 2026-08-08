@@ -71,7 +71,7 @@ export default function ServicePage({
                 <Link href={`/${next.slug}`} className="btn-line-dark">
                   Explore {next.label}
                 </Link>
-                <Link href={CONTACT.quoteMailto} className="btn-solid-dark">
+                <Link href="/#contact" className="btn-solid-dark">
                   Get a quote
                 </Link>
               </div>

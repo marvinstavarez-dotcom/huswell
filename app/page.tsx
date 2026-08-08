@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import FaqImage from "@/components/faq-image";
+import ContactSection from "@/components/contact-section";
 import ProjectCard from "@/components/project-card";
 import TestimonialSlider from "@/components/testimonials";
 import VideoStory from "@/components/video-story";
@@ -57,7 +58,7 @@ export default function Page() {
             Designed, printed, and finished under one roof in Quezon City.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-4">
-            <Link href={CONTACT.quoteMailto} className="btn-solid-dark">
+            <Link href="/#contact" className="btn-solid-dark">
               Get a free quote
             </Link>
             <a href="#faqs" className="btn-line-dark">
@@ -337,6 +338,9 @@ export default function Page() {
         </div>
       </section>
 
+      {/* ---------- Contact ---------- */}
+      <ContactSection />
+
       {/* ---------- CTA ---------- */}
       <section className="relative overflow-hidden border-t border-line-dark bg-canvas-dark py-24 md:py-28">
         <Image
@@ -356,7 +360,7 @@ export default function Page() {
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-mute-dark">{CTA_SUB}</p>
             </div>
             <div className="flex flex-col gap-4 sm:flex-row">
-              <Link href="/quote" className="btn-solid-dark">
+              <Link href="/#contact" className="btn-solid-dark">
                 Contact us
               </Link>
               <a href={CONTACT.phoneHref} className="btn-line-dark">
