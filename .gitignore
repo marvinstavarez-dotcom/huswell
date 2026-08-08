@@ -42,3 +42,6 @@ next-env.d.ts
 
 # design rules
 /UNSLOP.md
+
+# large media (kept local only)
+/public/assets/video/
