@@ -7,7 +7,6 @@ import { useState } from "react";
 import { CONTACT, SERVICES } from "@/lib/site-data";
 
 const PAGES = [
-  { href: "/story", label: "Our Team" },
   { href: "/testimonials", label: "Testimonials" },
   { href: "/#contact", label: "Contact" },
 ];
@@ -33,7 +32,7 @@ export default function Navbar() {
           />
         </Link>
 
-        <nav className="hidden items-center gap-7 md:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary">
           <NavDropdown
             label="Services"
             active={SERVICES.some((s) => pathname === `/${s.slug}`)}
@@ -59,7 +58,7 @@ export default function Navbar() {
         <button
           type="button"
           onClick={() => setOpen(!open)}
-          className="flex h-12 w-12 items-center justify-center md:hidden"
+          className="flex h-12 w-12 items-center justify-center lg:hidden"
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
         >
@@ -85,7 +84,7 @@ export default function Navbar() {
       </header>
 
       <div
-        className={`fixed inset-x-0 top-16 bottom-0 z-40 overflow-y-auto bg-canvas px-6 pt-8 transition-opacity duration-300 md:hidden ${
+        className={`fixed inset-x-0 top-16 bottom-0 z-40 overflow-y-auto bg-canvas px-6 pt-8 transition-opacity duration-300 lg:hidden ${
           open ? "opacity-100" : "invisible pointer-events-none opacity-0"
         }`}
       >

@@ -46,17 +46,6 @@ export const FILLER_COLORS = [
 
 export const FILLER_PACKS = "50 g / 500 g / 1 kg+";
 
-export const TEAM = [
-  { name: "Mr. Marvin S. Tavarez", role: "Chief Executive Officer", img: "/assets/img/team/ser-marvin.jpg" },
-  { name: "Ms. Dianne Huswell C. Tavarez", role: "Chief Operations Officer", img: "/assets/img/team/maam-dianne.jpg" },
-  { name: "Mr. Mark Heizel V. Puyogao", role: "Head Supervisor", img: "/assets/img/team/PKC09390_converted.jpg" },
-  { name: "Ms. Sariah Mae B. Patawaran", role: "Finance Department", img: "/assets/img/team/PKC09394_converted.jpg" },
-  { name: "Mr. John Clide M. Bernal", role: "Project Manager / Purchasing Department", img: "/assets/img/team/PKC09402_converted.jpg" },
-  { name: "Mr. David Grant A. Crisanto", role: "Graphic Designer", img: "/assets/img/team/PKC09425_converted.jpg" },
-  { name: "Ms. Alyssa I. Pascua", role: "Project Manager / Sales Account Manager", img: "/assets/img/team/PKC09430_converted.jpg" },
-  { name: "Mr. Jarred John M. Bernal", role: "Project Manager / Sales Admin", img: "/assets/img/team/PKC09438_converted.jpg" },
-];
-
 export const TESTIMONIALS = [
   {
     text: "We have been a loyal client of Huswell Trading for over 2 years, and the experience has been nothing short of amazing. All of them, especially Dianne, Marvin, Mark, and Annie, have always been extremely helpful, patient, and understanding. The quality and customer service at Huswell are beyond extraordinary. We have never seen a supplier go the extra mile as much as they do.",
@@ -106,6 +95,7 @@ export const CONTACT = {
   email: "sales@huswelltrading.com",
   phone: "+63 917 318 3354",
   phoneHref: "tel:+639173183354",
+  facebook: "https://www.facebook.com/423646941093708/",
   instagram: "https://www.instagram.com/huswelltrading/",
   tiktok: "https://www.tiktok.com/@huswell.trading",
   whatsapp: "https://wa.me/639173183354",

@@ -18,6 +18,11 @@ export default function VideoStory() {
         onPlay={() => setPlaying(true)}
         onEnded={() => setPlaying(false)}
       >
+        <source
+          media="(max-width: 1024px)"
+          src="/assets/video/huswell-trading-mobile.mp4"
+          type="video/mp4"
+        />
         <source src="/assets/video/huswell-trading.mp4" type="video/mp4" />
         Your browser does not support HTML5 video.
       </video>

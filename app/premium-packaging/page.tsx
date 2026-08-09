@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import ServicePage from "@/components/service-page";
 import { PROJECTS, SERVICES } from "@/lib/site-data";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Premium Box Packaging",
+export const metadata: Metadata = createPageMetadata({
+  title: "Premium Rigid Boxes and PR Kit Packaging",
   description:
-    "Premium PR kit box packaging — chipboard construction, rugby adhesive assembly, and matte or glossy lamination for corporate giveaways, PR kits, and brand promotions.",
-};
+    "Custom premium rigid boxes, PR kits, corporate gift boxes, magnetic closures, inserts, and specialty finishes for brands in the Philippines.",
+  path: "/premium-packaging",
+});
 
 export default function Page() {
   const service = SERVICES[0];

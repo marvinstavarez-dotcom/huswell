@@ -3,6 +3,7 @@ import { Space_Grotesk } from "next/font/google";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import ChatButtons from "@/components/chat-buttons";
+import { businessSchema, SITE_URL } from "@/lib/seo";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -14,11 +15,11 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: {
-    default: "Huswell Trading — Premium Box Packaging in Quezon City",
-    template: "%s — Huswell Trading",
+    default: "Custom Packaging Supplier in the Philippines",
+    template: "%s | Huswell Trading",
   },
   description:
-    "Custom rigid boxes, regular box packaging, offset & digital printing, corrugated cartons, and 20 colors of shredded paper fillers. Manufactured in Quezon City since 2015, delivered nationwide.",
+    "Custom packaging, rigid boxes, PR kits, printed cartons, corrugated boxes, corporate gift packaging, and paper fillers. Designed and produced in Quezon City, delivered nationwide.",
   keywords: [
     "rigid boxes Philippines",
     "premium box packaging",
@@ -27,11 +28,32 @@ export const metadata: Metadata = {
     "corrugated boxes",
     "shredded paper fillers",
   ],
-  metadataBase: new URL("https://huswelltrading.com"),
+  metadataBase: new URL(SITE_URL),
+  alternates: { canonical: "/" },
+  robots: { index: true, follow: true },
   openGraph: {
-    title: "Huswell Trading — Premium Box Packaging",
+    title: "Custom Packaging Supplier in the Philippines | Huswell Trading",
     description:
-      "From concept to completion: premium boxes, offset & digital print, corrugated, and shredded paper fillers.",
+      "Custom boxes, PR kits, printed packaging, corporate gift boxes, and corrugated solutions for brands across the Philippines.",
+    url: SITE_URL,
+    siteName: "Huswell Trading",
+    locale: "en_PH",
+    type: "website",
+    images: [
+      {
+        url: "/assets/img/hero/hero.jpg",
+        width: 1600,
+        height: 900,
+        alt: "Custom packaging by Huswell Trading",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Custom Packaging Supplier in the Philippines | Huswell Trading",
+    description:
+      "Custom boxes, PR kits, printed packaging, corporate gift boxes, and corrugated solutions for brands across the Philippines.",
+    images: ["/assets/img/hero/hero.jpg"],
   },
 };
 
@@ -39,6 +61,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={spaceGrotesk.variable}>
       <body className="min-h-full bg-canvas-dark antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(businessSchema).replace(/</g, "\\u003c") }}
+        />
         <Navbar />
         {children}
         <Footer />

@@ -1,46 +1,16 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import Lightbox from "@/components/lightbox";
 import type { Project } from "@/lib/site-data";
 
-const ROTATE_MS = 4000;
-
-export default function ProjectCard({
-  project,
-  autoRotate = false,
-}: {
-  project: Project;
-  autoRotate?: boolean;
-}) {
+export default function ProjectCard({ project }: { project: Project }) {
   const [index, setIndex] = useState(0);
-  const [paused, setPaused] = useState(false);
   const [open, setOpen] = useState<number | null>(null);
-  const timer = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const count = project.imgs.length;
   const rest = project.imgs.slice(1, 4);
-
-  useEffect(() => {
-    if (!autoRotate || count < 2 || paused || open !== null) return;
-    const tick = () => setIndex((i) => (i + 1) % count);
-    timer.current = setInterval(tick, ROTATE_MS);
-    const onVisibility = () => {
-      if (document.hidden && timer.current) {
-        clearInterval(timer.current);
-        timer.current = null;
-      } else if (!document.hidden && !paused && open === null && !timer.current) {
-        timer.current = setInterval(tick, ROTATE_MS);
-      }
-    };
-    document.addEventListener("visibilitychange", onVisibility);
-    return () => {
-      if (timer.current) clearInterval(timer.current);
-      timer.current = null;
-      document.removeEventListener("visibilitychange", onVisibility);
-    };
-  }, [autoRotate, count, paused, open]);
 
   return (
     <article className="group flex flex-col">
@@ -49,23 +19,16 @@ export default function ProjectCard({
         onClick={() => setOpen(index)}
         aria-label={`View ${project.name} photos`}
         className="block w-full cursor-zoom-in text-left"
-        onMouseEnter={() => setPaused(true)}
-        onMouseLeave={() => setPaused(false)}
       >
         <div className="relative aspect-[4/3] border border-line bg-surface transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:-translate-y-1">
-          {project.imgs.map((src, i) => (
-            <Image
-              key={src}
-              src={src}
-              alt={i === index ? project.name : ""}
-              fill
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-              aria-hidden={i !== index}
-              className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] ${
-                i === index ? "opacity-100" : "opacity-0"
-              }`}
-            />
-          ))}
+          <Image
+            key={project.imgs[index]}
+            src={project.imgs[index]}
+            alt={project.name}
+            fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            className="absolute inset-0 h-full w-full object-cover"
+          />
         </div>
       </button>
       <h3 className="mt-5 text-lg font-medium tracking-tight text-ink">{project.name}</h3>

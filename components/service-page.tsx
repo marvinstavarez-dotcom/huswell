@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import PageHero from "@/components/page-hero";
 import ProjectCard from "@/components/project-card";
-import { CONTACT, SERVICES, type Project } from "@/lib/site-data";
+import { SERVICES, type Project } from "@/lib/site-data";
 
 export default function ServicePage({
   index,

@@ -2,13 +2,15 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "@/components/page-hero";
 import FillerGallery from "@/components/filler-gallery";
-import { CONTACT, FILLER_COLORS, FILLER_PACKS, SERVICES } from "@/lib/site-data";
+import { FILLER_COLORS, FILLER_PACKS, SERVICES } from "@/lib/site-data";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Shredded Paper Fillers",
+export const metadata: Metadata = createPageMetadata({
+  title: "Shredded Paper Fillers for Gift Packaging",
   description:
-    "Crinkled-cut shredded paper fillers in 20 vibrant colors — stylish cushioning and protection for gifts and fragile items. Available in 50g, 500g, and 1kg+ packs.",
-};
+    "Crinkled-cut shredded paper fillers in 20 colors for gift boxes, fragile products, retail presentation, and custom packaging support.",
+  path: "/shredded-paper-fillers",
+});
 
 const GALLERY = [
   ...Array.from({ length: 19 }, (_, i) => `/assets/img/fillers/filler-${String(i + 3).padStart(2, "0")}.jpg`),

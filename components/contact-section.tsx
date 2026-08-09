@@ -87,6 +87,15 @@ export default function ContactSection() {
                   Social
                 </span>
                 <a
+                  href={CONTACT.facebook}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-ink underline underline-offset-4 decoration-accent hover:text-accent-hover"
+                >
+                  Facebook
+                </a>{" "}
+                /{" "}
+                <a
                   href={CONTACT.instagram}
                   target="_blank"
                   rel="noreferrer"

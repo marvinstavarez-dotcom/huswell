@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import ServicePage from "@/components/service-page";
 import { PROJECTS, SERVICES } from "@/lib/site-data";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Corrugated Box Packaging",
+export const metadata: Metadata = createPageMetadata({
+  title: "Custom Corrugated Boxes and Mailer Packaging",
   description:
-    "Corrugated box packaging with various flute types for balikbayan boxes and heavy-duty deliveries. Full-print linings, mailers, and clamshells. MOQ 1,000 pieces.",
-};
+    "Custom corrugated boxes, mailers, clamshells, and heavy-duty product packaging with printing and finishes for shipping, retail, and corporate kits.",
+  path: "/corrugated-box-packaging",
+});
 
 export default function Page() {
   const service = SERVICES[3];

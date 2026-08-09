@@ -1,11 +1,18 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/page-hero";
 import { TESTIMONIALS } from "@/lib/site-data";
+import { createPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Testimonials",
   description:
     "What Huswell Trading clients say — five years of partnerships, from Facebook messaging to full PR kit programs.",
+  ...createPageMetadata({
+    title: "Custom Packaging Client Testimonials",
+    description:
+      "Read feedback from Huswell Trading clients on custom boxes, packaging quality, service, and long-term project support.",
+    path: "/testimonials",
+  }),
 };
 
 export default function Page() {

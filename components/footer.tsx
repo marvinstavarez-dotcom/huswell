@@ -4,7 +4,6 @@ import { CONTACT, SERVICES } from "@/lib/site-data";
 
 const LINKS = [
   { href: "/projects", label: "Projects" },
-  { href: "/story", label: "Our Team" },
   { href: "/testimonials", label: "Testimonials" },
   { href: "/#contact", label: "Get a Free Quote" },
 ];
@@ -28,6 +27,14 @@ export default function Footer() {
               finished in Quezon City since 2015.
             </p>
             <div className="mt-6 flex gap-8 text-sm">
+              <a
+                className="text-ink underline decoration-accent decoration-2 underline-offset-4 transition-colors hover:text-accent-hover"
+                href={CONTACT.facebook}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Facebook
+              </a>
               <a
                 className="text-ink underline decoration-accent decoration-2 underline-offset-4 transition-colors hover:text-accent-hover"
                 href={CONTACT.instagram}

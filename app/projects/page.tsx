@@ -5,9 +5,34 @@ import PageHero from "@/components/page-hero";
 import { PROJECTS, SERVICES } from "@/lib/site-data";
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: "Custom Packaging Projects and Services",
   description:
-    "Choose a service to browse every project from Huswell Trading — premium and regular rigid boxes, offset & digital printed cartons, corrugated mailers, and shredded paper fillers, with photos and build details.",
+    "Browse custom rigid boxes, PR kit packaging, printed cartons, corrugated mailers, and paper filler projects produced by Huswell Trading.",
+  alternates: { canonical: "/projects" },
+  openGraph: {
+    type: "website",
+    locale: "en_PH",
+    url: "/projects",
+    title: "Custom Packaging Projects and Services | Huswell Trading",
+    description:
+      "Browse custom rigid boxes, PR kit packaging, printed cartons, corrugated mailers, and paper filler projects produced by Huswell Trading.",
+    siteName: "Huswell Trading",
+    images: [
+      {
+        url: "/assets/img/hero/hero.jpg",
+        width: 1600,
+        height: 900,
+        alt: "Custom packaging by Huswell Trading",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Custom Packaging Projects and Services | Huswell Trading",
+    description:
+      "Browse custom rigid boxes, PR kit packaging, printed cartons, corrugated mailers, and paper filler projects produced by Huswell Trading.",
+    images: ["/assets/img/hero/hero.jpg"],
+  },
 };
 
 const CATEGORY_BY_SLUG: Record<string, string> = {
