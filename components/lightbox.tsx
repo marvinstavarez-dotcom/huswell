@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 export default function Lightbox({
   imgs,
@@ -18,8 +18,6 @@ export default function Lightbox({
 }) {
   const closeRef = useRef<HTMLButtonElement>(null);
   const count = imgs.length;
-  const [portraitSource, setPortraitSource] = useState<string | null>(null);
-  const isPortrait = portraitSource === imgs[index];
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -54,11 +52,7 @@ export default function Lightbox({
             alt={name}
             fill
             sizes="100vw"
-            onLoad={(event) => {
-              const image = event.currentTarget;
-              setPortraitSource(image.naturalHeight > image.naturalWidth ? imgs[index] : null);
-            }}
-            className={isPortrait ? "object-cover object-bottom" : "object-contain"}
+            className="object-contain"
           />
         </div>
 
