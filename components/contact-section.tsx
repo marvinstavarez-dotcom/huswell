@@ -159,7 +159,7 @@ export default function ContactSection() {
                 </p>
               )}
               <div className="md:col-span-2 flex flex-col gap-4 sm:flex-row sm:items-center">
-                <button type="submit" className="btn-solid-light" disabled={status === "sending"}>
+                <button type="submit" className="btn-solid-light w-full sm:w-auto" disabled={status === "sending"}>
                   {status === "sending" ? "Sending…" : "Send message"}
                 </button>
                 <p className="text-sm text-mute">

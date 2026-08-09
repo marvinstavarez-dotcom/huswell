@@ -67,11 +67,11 @@ export default function ServicePage({
               <p className="mt-4 max-w-md text-base leading-relaxed text-mute-dark">
                 {next.short}
               </p>
-              <div className="mt-8 flex flex-wrap gap-4">
-                <Link href={`/${next.slug}`} className="btn-line-dark">
+              <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
+                <Link href={`/${next.slug}`} className="btn-line-dark w-full sm:w-auto">
                   Explore {next.label}
                 </Link>
-                <Link href="/#contact" className="btn-solid-dark">
+                <Link href="/#contact" className="btn-solid-dark w-full sm:w-auto">
                   Get a quote
                 </Link>
               </div>

@@ -172,11 +172,11 @@ export default function Page() {
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/55 to-black/35" />
-        <div className="relative mx-auto w-full max-w-6xl px-5 pb-20 pt-32 md:px-8 md:pb-28 md:pt-44">
+        <div className="relative mx-auto w-full max-w-6xl px-5 pb-20 pt-32 md:px-8 md:pb-20 md:pt-28 2xl:pb-24 2xl:pt-36">
           <p className="micro-label mb-6 text-white/70">
             Custom packaging · Printing · PR kits · Corporate boxes
           </p>
-          <h1 className="max-w-4xl text-[clamp(2.5rem,5vw,4.5rem)] font-semibold leading-[1.02] tracking-[-0.025em] text-white">
+          <h1 className="max-w-4xl text-[clamp(2.25rem,4.5vw,4rem)] font-semibold leading-[1.02] tracking-[-0.025em] text-white">
             Custom packaging that makes your brand stand out.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/85">
@@ -185,11 +185,11 @@ export default function Page() {
             experience. From concept and prototyping to production and delivery, Huswell Trading
             helps businesses turn packaging ideas into professionally crafted solutions.
           </p>
-          <div className="mt-10 flex flex-wrap items-center gap-4">
-            <Link href="/#contact" className="btn-solid-dark">
+          <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center">
+            <Link href="/#contact" className="btn-solid-dark w-full sm:w-auto">
               Get a custom quote
             </Link>
-            <Link href="#solutions" className="btn-line-dark">
+            <Link href="#solutions" className="btn-line-dark w-full sm:w-auto">
               Explore packaging solutions
             </Link>
           </div>
@@ -207,7 +207,7 @@ export default function Page() {
             <Link
               key={href}
               href={href}
-              className="border-b border-r border-line px-3 py-4 text-center text-[11px] font-medium uppercase tracking-[0.14em] text-ink transition-colors hover:bg-canvas-alt hover:text-accent-hover sm:border-b-0"
+              className="border-b border-r border-line px-3 py-4 text-center text-[11px] font-medium uppercase tracking-[0.1em] text-ink transition-colors hover:bg-canvas-alt hover:text-accent-hover sm:border-b-0 sm:tracking-[0.14em]"
             >
               {label}
             </Link>
@@ -239,7 +239,7 @@ export default function Page() {
                 professional, performs well, and represents your brand properly.
               </p>
             </div>
-            <Link href="#process" className="btn-line-light mt-10">
+            <Link href="#process" className="btn-line-light mt-10 w-full sm:w-auto">
               Our packaging process
             </Link>
           </div>
@@ -284,7 +284,10 @@ export default function Page() {
                 </div>
                 <h3 className="mt-5 text-xl font-medium tracking-tight text-ink">{solution.title}</h3>
                   <p className="mt-3 flex-1 text-sm leading-relaxed text-mute line-clamp-4 sm:line-clamp-none">{solution.body}</p>
-                <Link href={solution.href} className="mt-6 inline-flex text-sm font-medium text-accent-hover hover:underline">
+                <Link
+                  href={solution.href}
+                  className="mt-6 inline-flex w-fit border border-accent-hover px-4 py-3 text-sm font-medium text-accent-hover transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] hover:bg-accent-hover hover:text-white active:translate-y-px"
+                >
                   Explore this solution <span aria-hidden="true" className="ml-2">→</span>
                 </Link>
               </article>
@@ -387,7 +390,7 @@ export default function Page() {
                 Packaging built around your product.
               </h2>
             </div>
-            <Link href="/projects" className="btn-line-light">
+            <Link href="/projects" className="btn-line-light w-full sm:w-auto">
               View all projects
             </Link>
           </div>
@@ -484,7 +487,7 @@ export default function Page() {
                 Packaging partnerships built to last.
               </h2>
             </div>
-            <Link href="/testimonials" className="btn-line-light">
+            <Link href="/testimonials" className="btn-line-light w-full sm:w-auto">
               Read testimonials
             </Link>
           </div>
@@ -515,11 +518,11 @@ export default function Page() {
               corrugated boxes, rigid boxes, or printed packaging, Huswell Trading can help turn
               your requirements into a professionally crafted solution.
             </p>
-            <div className="mt-10 flex flex-wrap gap-4">
-              <Link href="/#contact" className="btn-solid-dark">
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
+              <Link href="/#contact" className="btn-solid-dark w-full sm:w-auto">
                 Request a custom quote
               </Link>
-              <a href={CONTACT.phoneHref} className="btn-line-dark">
+              <a href={CONTACT.phoneHref} className="btn-line-dark w-full sm:w-auto">
                 {CONTACT.phone}
               </a>
             </div>

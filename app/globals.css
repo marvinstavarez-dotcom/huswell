@@ -18,16 +18,51 @@
 }
 
 html {
+  min-width: 0;
+  max-width: 100%;
   scroll-behavior: smooth;
   scroll-padding-top: 5.5rem;
 }
 
 body {
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: clip;
   font-family: var(--font-space-grotesk), system-ui, sans-serif;
   background: var(--color-canvas);
   color: var(--color-ink);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+
+/* Keep content in the viewport when a long URL, label, or grid item is encountered. */
+main,
+section,
+header,
+footer,
+nav,
+article,
+aside,
+form,
+[role="dialog"] {
+  min-width: 0;
+}
+
+p,
+h1,
+h2,
+h3,
+a,
+button,
+label,
+summary {
+  overflow-wrap: anywhere;
+}
+
+img,
+video,
+svg {
+  max-width: 100%;
 }
 
 ::selection {
@@ -50,15 +85,25 @@ summary::-webkit-details-marker {
   }
 
   .btn-solid-dark {
-    @apply inline-flex min-h-12 items-center justify-center gap-3 border border-accent-hover bg-accent-hover px-7 py-3.5 text-[12px] font-medium uppercase tracking-[0.18em] text-white transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] hover:border-[#B32A1F] hover:bg-[#B32A1F] active:translate-y-px disabled:pointer-events-none disabled:opacity-50;
+    @apply inline-flex min-h-12 max-w-full items-center justify-center gap-3 whitespace-normal border border-accent-hover bg-accent-hover px-7 py-3.5 text-center text-[12px] font-medium uppercase tracking-[0.18em] text-white transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] hover:border-[#B32A1F] hover:bg-[#B32A1F] active:translate-y-px disabled:pointer-events-none disabled:opacity-50;
   }
   .btn-line-dark {
-    @apply inline-flex min-h-12 items-center justify-center gap-3 border border-grease/40 px-7 py-3.5 text-[12px] font-medium uppercase tracking-[0.18em] text-grease transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] hover:border-grease hover:bg-grease hover:text-canvas-dark active:translate-y-px disabled:pointer-events-none disabled:opacity-50;
+    @apply inline-flex min-h-12 max-w-full items-center justify-center gap-3 whitespace-normal border border-grease/40 px-7 py-3.5 text-center text-[12px] font-medium uppercase tracking-[0.18em] text-grease transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] hover:border-grease hover:bg-grease hover:text-canvas-dark active:translate-y-px disabled:pointer-events-none disabled:opacity-50;
   }
   .btn-solid-light {
-    @apply inline-flex min-h-12 items-center justify-center gap-3 border border-accent-hover bg-accent-hover px-7 py-3.5 text-[12px] font-medium uppercase tracking-[0.18em] text-white transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] hover:border-[#B32A1F] hover:bg-[#B32A1F] active:translate-y-px disabled:pointer-events-none disabled:opacity-50;
+    @apply inline-flex min-h-12 max-w-full items-center justify-center gap-3 whitespace-normal border border-accent-hover bg-accent-hover px-7 py-3.5 text-center text-[12px] font-medium uppercase tracking-[0.18em] text-white transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] hover:border-[#B32A1F] hover:bg-[#B32A1F] active:translate-y-px disabled:pointer-events-none disabled:opacity-50;
   }
   .btn-line-light {
-    @apply inline-flex min-h-12 items-center justify-center gap-3 border border-ink/25 px-7 py-3.5 text-[12px] font-medium uppercase tracking-[0.18em] text-ink transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] hover:border-ink hover:bg-ink hover:text-white active:translate-y-px disabled:pointer-events-none disabled:opacity-50;
+    @apply inline-flex min-h-12 max-w-full items-center justify-center gap-3 whitespace-normal border border-ink/25 px-7 py-3.5 text-center text-[12px] font-medium uppercase tracking-[0.18em] text-ink transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] hover:border-ink hover:bg-ink hover:text-white active:translate-y-px disabled:pointer-events-none disabled:opacity-50;
+  }
+}
+
+@media (max-width: 399px) {
+  .btn-solid-dark,
+  .btn-line-dark,
+  .btn-solid-light,
+  .btn-line-light {
+    padding-inline: 1rem;
+    letter-spacing: 0.11em;
   }
 }

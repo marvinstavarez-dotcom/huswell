@@ -55,7 +55,7 @@ export default function ProjectCard({ project }: { project: Project }) {
                   alt=""
                   width={400}
                   height={300}
-                  className={`aspect-[4/3] w-16 object-cover transition-opacity duration-300 md:w-20 ${
+                  className={`aspect-[4/3] w-14 object-cover transition-opacity duration-300 sm:w-16 md:w-20 ${
                     active ? "opacity-100" : "opacity-70 hover:opacity-100"
                   }`}
                 />
