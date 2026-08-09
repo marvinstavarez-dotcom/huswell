@@ -90,7 +90,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-14 flex flex-col gap-3 border-t border-line pt-8 text-[11px] font-medium uppercase tracking-[0.18em] text-mute md:flex-row md:items-center md:justify-between">
-          <p>© {new Date().getFullYear()} Huswell Trading. All rights reserved.</p>
+          <p>© 2015 Huswell Trading. All rights reserved.</p>
           <p>Made in Quezon City, Philippines.</p>
         </div>
       </div>

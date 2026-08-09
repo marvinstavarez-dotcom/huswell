@@ -37,7 +37,6 @@ export const PROJECTS: Project[] = [
   { name: "Whey Prothin \u2013 Corrugated Box with Full Print Lining", category: "Corrugated Box Packaging", categorySlug: "corrugated", imgs: ["/assets/img/projects/corrugated/03-whey-prothin-8211-corrugated-box-with-full-print/01.jpg", "/assets/img/projects/corrugated/03-whey-prothin-8211-corrugated-box-with-full-print/02.jpg", "/assets/img/projects/corrugated/03-whey-prothin-8211-corrugated-box-with-full-print/03.jpg", "/assets/img/projects/corrugated/03-whey-prothin-8211-corrugated-box-with-full-print/04.jpg", "/assets/img/projects/corrugated/03-whey-prothin-8211-corrugated-box-with-full-print/05.jpg"] },
   { name: "Colored Corrugated Box with Direct Print", category: "Corrugated Box Packaging", categorySlug: "corrugated", imgs: ["/assets/img/projects/corrugated/04-colored-corrugated-box-with-direct-print/01.jpg", "/assets/img/projects/corrugated/04-colored-corrugated-box-with-direct-print/02.jpg", "/assets/img/projects/corrugated/04-colored-corrugated-box-with-direct-print/03.jpg", "/assets/img/projects/corrugated/04-colored-corrugated-box-with-direct-print/04.jpg", "/assets/img/projects/corrugated/04-colored-corrugated-box-with-direct-print/05.jpg", "/assets/img/projects/corrugated/04-colored-corrugated-box-with-direct-print/06.jpg"] },
 ];
-
 export const FILLER_COLORS = [
   "Pearl White", "Saffron", "Ivory", "Brown Kraft", "Taro", "White", "Ruby Red",
   "Lemon", "Rose Pink", "Black", "Turquoise", "Red", "Royal Blue", "Asparagus",
@@ -75,20 +74,47 @@ export const TESTIMONIALS = [
 ];
 
 export const FAQS = [
-  "What is your Minimum Order Quantity (M.O.Q)?",
-  "Do you offer customized packaging?",
-  "How long is the production lead time?",
-  "Do you provide design assistance?",
-  "What file format should I submit for printing?",
-  "Can I request a sample before mass production?",
-  "What materials do you offer?",
-  "Do you deliver nationwide?",
-  "How much does custom packaging cost?",
-  "What industries do you serve?",
-  "What printing options do you offer?",
-  "Do you cater to startups and small businesses?",
-  "How can I contact your team?",
-];
+  [
+    "What types of custom packaging does Huswell Trading offer?",
+    "Huswell Trading offers rigid boxes, PR boxes, corrugated boxes, folding cartons, printed boxes, paper mache boxes, corporate gift packaging, promotional packaging, inserts, and specialty boxes.",
+  ],
+  [
+    "Can you customize the size and design of the box?",
+    "Yes. Packaging can be customized based on your required dimensions, structure, material, artwork, colors, printing, finishing, inserts, and other project specifications.",
+  ],
+  [
+    "Do you accept corporate and bulk orders?",
+    "Yes. We work with companies, agencies, organizations, brands, and corporate procurement teams for customized and volume packaging requirements.",
+  ],
+  [
+    "Can you produce custom PR boxes?",
+    "Yes. We can develop custom PR boxes and influencer kits for product launches, campaigns, media events, influencer seeding, brand activations, and corporate promotions.",
+  ],
+  [
+    "Can you help us choose the right packaging?",
+    "Yes. Send your product details, dimensions, quantity, budget range, and intended application. We can recommend suitable structures and materials.",
+  ],
+  [
+    "What information do you need to prepare a quotation?",
+    "A packaging type, dimensions, quantity, material preference, printing and finishing requirements, artwork or logo, product details, delivery date, and delivery location help us prepare an accurate quotation. An initial concept is also enough to start.",
+  ],
+  [
+    "Do you offer custom inserts and compartments?",
+    "Yes. Depending on the packaging structure, we can develop custom inserts, dividers, holders, and compartments to improve product protection and presentation.",
+  ],
+  [
+    "Can you create packaging based on a reference photo?",
+    "Yes. Send reference photos or packaging inspiration together with your dimensions, quantity, materials, and branding requirements. We can evaluate how the concept can be adapted for production.",
+  ],
+  [
+    "What is the minimum order quantity?",
+    "Minimum order quantities vary by packaging type, material, printing method, finishing, and production process. Share your required quantity so we can recommend the most appropriate option.",
+  ],
+  [
+    "How long does custom packaging production take?",
+    "Production lead times vary by packaging type, quantity, materials, printing, finishing, and project complexity. Your estimated schedule is confirmed during quotation and project approval.",
+  ],
+] as const;
 
 export const CONTACT = {
   address: ["72 Adrian St., North Fairview", "Novaliches, Quezon City"],
@@ -145,6 +171,3 @@ export const SERVICES = [
     moq: null,
   },
 ];
-
-export const CTA_COPY = "Can't find what you're looking for?";
-export const CTA_SUB = "We offer custom packaging solutions tailored to your specific needs. Contact us today to discuss your unique requirements.";
