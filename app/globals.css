@@ -22,6 +22,7 @@ html {
   max-width: 100%;
   scroll-behavior: smooth;
   scroll-padding-top: 5.5rem;
+  scrollbar-gutter: stable;
 }
 
 body {
@@ -65,6 +66,12 @@ svg {
   max-width: 100%;
 }
 
+input,
+select,
+textarea {
+  font-size: 1rem;
+}
+
 ::selection {
   background: var(--color-accent);
   color: #fff;
@@ -99,6 +106,10 @@ summary::-webkit-details-marker {
 }
 
 @media (max-width: 399px) {
+  .micro-label {
+    letter-spacing: 0.16em;
+  }
+
   .btn-solid-dark,
   .btn-line-dark,
   .btn-solid-light,

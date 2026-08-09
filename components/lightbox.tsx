@@ -46,7 +46,7 @@ export default function Lightbox({
         className="relative flex h-full w-full items-center justify-center px-5 md:px-24"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="relative h-[62vh] w-full max-w-[88vw] md:h-[78vh]">
+        <div className="relative h-[62dvh] max-h-[calc(100dvh-10rem)] w-full max-w-[88vw] sm:h-[68dvh] md:h-[78dvh] md:max-h-[calc(100dvh-9rem)]">
           <Image
             src={imgs[index]}
             alt={name}
@@ -86,7 +86,7 @@ export default function Lightbox({
           </>
         )}
 
-        <div className="absolute bottom-6 left-1/2 w-full max-w-xl -translate-x-1/2 px-6 text-center">
+        <div className="absolute bottom-[max(1.5rem,env(safe-area-inset-bottom))] left-1/2 w-full max-w-xl -translate-x-1/2 px-20 text-center sm:px-24">
           <p className="text-sm font-medium text-white">{name}</p>
           <p className="mt-1 text-[11px] font-medium uppercase tracking-[0.22em] text-white/50">
             {index + 1} / {count}

@@ -26,6 +26,9 @@ export default function Footer() {
               cartons, and 20 colors of shredded paper fillers — designed, printed, and
               finished in Quezon City since 2015.
             </p>
+            <p className="mt-3 max-w-sm text-sm leading-relaxed text-mute">
+              Packaging that protects your product. Presentation that builds your brand.
+            </p>
             <div className="mt-6 flex flex-wrap gap-x-6 gap-y-3 text-sm sm:gap-x-8">
               <a
                 className="text-ink underline decoration-accent decoration-2 underline-offset-4 transition-colors hover:text-accent-hover"

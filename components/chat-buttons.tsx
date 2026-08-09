@@ -9,7 +9,7 @@ export default function ChatButtons() {
 
   return (
     <>
-      <div className="fixed bottom-[max(1.25rem,env(safe-area-inset-bottom))] right-5 z-30 flex flex-col gap-3 lg:hidden">
+      <div className="fixed bottom-[max(1.25rem,env(safe-area-inset-bottom))] right-[max(1.25rem,env(safe-area-inset-right))] z-30 flex flex-col gap-3 lg:hidden">
         {open && <ChatLinks />}
         <button
           type="button"
@@ -23,7 +23,7 @@ export default function ChatButtons() {
         </button>
       </div>
 
-      <div className="fixed bottom-[max(1.25rem,env(safe-area-inset-bottom))] right-5 z-50 hidden flex-col gap-3 lg:flex">
+      <div className="fixed bottom-[max(1.25rem,env(safe-area-inset-bottom))] right-[max(1.25rem,env(safe-area-inset-right))] z-50 hidden flex-col gap-3 lg:flex">
         <ChatLinks />
       </div>
     </>

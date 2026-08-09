@@ -27,7 +27,7 @@ export default function Navbar() {
             alt="Huswell Trading logo"
             width={140}
             height={32}
-            className="h-8 w-auto sm:h-11"
+            className="h-8 w-auto sm:h-9"
             priority
           />
         </Link>
@@ -84,7 +84,7 @@ export default function Navbar() {
       </header>
 
       <div
-        className={`fixed inset-x-0 top-16 bottom-0 z-40 overflow-y-auto bg-canvas px-6 pt-8 transition-opacity duration-300 lg:hidden ${
+        className={`fixed inset-x-0 top-16 bottom-0 z-40 overflow-y-auto overscroll-contain bg-canvas px-5 pb-[max(2rem,env(safe-area-inset-bottom))] pt-8 transition-opacity duration-300 md:px-8 lg:hidden ${
           open ? "opacity-100" : "invisible pointer-events-none opacity-0"
         }`}
       >

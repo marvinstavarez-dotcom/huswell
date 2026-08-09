@@ -2,10 +2,9 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import ContactSection from "@/components/contact-section";
-import ProjectCard from "@/components/project-card";
 import TestimonialSlider from "@/components/testimonials";
 import VideoStory from "@/components/video-story";
-import { CONTACT, FAQS, PROJECTS } from "@/lib/site-data";
+import { CONTACT, FAQS } from "@/lib/site-data";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
@@ -18,49 +17,65 @@ export const metadata: Metadata = createPageMetadata({
 const SOLUTIONS = [
   {
     title: "Premium rigid boxes",
-    body: "High-end custom rigid boxes for corporate gifts, luxury products, beauty, jewelry, VIP kits, and special releases. Add printing, foil stamping, embossing, magnetic closures, inserts, and custom compartments.",
+    body: "Create a high-end presentation with professionally crafted custom rigid boxes.",
+    idealFor: ["Corporate gifts", "Luxury products", "Beauty and cosmetics", "Jewelry and accessories", "VIP kits", "Special edition products"],
+    cta: "Request a rigid box quote",
     href: "/premium-packaging",
     image: "/assets/img/services/premium.jpg",
   },
   {
     title: "Custom PR boxes and influencer kits",
-    body: "Campaign packaging for product launches, influencer seeding, media kits, brand activations, press kits, and corporate events. We can plan the outer box, inserts, printed materials, and product presentation together.",
+    body: "Make your product launch or campaign memorable with customized PR boxes and influencer kits.",
+    idealFor: ["Product launches", "Influencer campaigns", "Media kits", "Brand activations", "Press kits", "Corporate events"],
+    cta: "Build your PR kit",
     href: "/premium-packaging",
     image: "/assets/img/projects/premium/02-smart-parenting-8211-premium-canister-top-bottom/01.jpg",
   },
   {
     title: "Corrugated boxes",
-    body: "Durable custom corrugated packaging for e-commerce shipping, subscription boxes, food and beverage products, corporate kits, and heavy or fragile items. Sizes, structures, printing, and finishes follow your requirements.",
+    body: "Durable and practical custom corrugated packaging for businesses that require strength, protection, and flexibility.",
+    idealFor: ["E-commerce shipping", "Product packaging", "Subscription boxes", "Corporate kits", "Food and beverage packaging", "Heavy or fragile products"],
+    cta: "Explore corrugated boxes",
     href: "/corrugated-box-packaging",
     image: "/assets/img/services/corrugated.jpg",
   },
   {
     title: "Offset printed boxes and folding cartons",
-    body: "Consistent-color printed product packaging for cosmetics, food, supplements, retail merchandise, pharmaceuticals, consumer goods, and promotions. Choose from paperboards, coatings, laminations, and finishing options.",
+    body: "Professional printed product packaging for brands that need consistent colors, detailed graphics, and scalable production.",
+    idealFor: ["Cosmetics", "Food products", "Supplements", "Retail merchandise", "Pharmaceutical packaging", "Consumer goods"],
+    cta: "Explore printed packaging",
     href: "/offset-digital-packaging",
     image: "/assets/img/services/offset.jpg",
   },
   {
     title: "Paper mache and handcrafted boxes",
-    body: "Customizable handcrafted packaging in different shapes, sizes, colors, textures, and designs for gift packaging, keepsake boxes, home and lifestyle products, special events, and creative projects.",
+    body: "Customizable paper mache boxes and specialty handcrafted packaging in shapes, sizes, colors, textures, and designs suited to your application.",
+    idealFor: ["Gift packaging", "Corporate giveaways", "Keepsake boxes", "Home and lifestyle products", "Special events", "Creative projects"],
+    cta: "Explore handcrafted boxes",
     href: "/projects",
     image: "/assets/img/about/cover.webp",
   },
   {
     title: "Corporate gift and giveaway packaging",
-    body: "Turn client gifts, employee kits, anniversaries, executive gifts, conferences, and event giveaways into professionally presented packages with branding, inserts, personalized details, and printed messages.",
+    body: "Transform ordinary corporate giveaways into professionally presented gifts with customized inserts, branding, and special finishing.",
+    idealFor: ["Employee gifts", "Client appreciation gifts", "Company anniversaries", "Executive gifts", "Conference kits", "Event giveaways"],
+    cta: "Plan corporate packaging",
     href: "/premium-packaging",
     image: "/assets/img/projects/premium/04-shangri-la-8211-premium-basket-style-pr-kit-with/01.jpg",
   },
   {
     title: "Custom inserts and packaging accessories",
-    body: "Paperboard inserts, foam inserts, dividers, compartments, sleeves, labels, bands, fabric interiors, and printed cards that hold products securely and improve presentation.",
+    body: "Internal packaging components designed to hold and present your products properly.",
+    idealFor: ["Paperboard inserts", "Foam inserts", "Product dividers", "Custom compartments", "Fabric interiors", "Printed cards"],
+    cta: "Discuss packaging inserts",
     href: "/premium-packaging",
     image: "/assets/img/projects/premium/14-conrad-8211-drawer-box-with-textured-cover-and-d/01.jpg",
   },
   {
     title: "Shredded paper fillers",
     body: "Crinkled-cut paper fillers in 20 colors for stylish cushioning, gift-box decoration, product protection, and stronger unboxing presentation.",
+    idealFor: ["Gift boxes", "Fragile products", "Retail presentation", "Corporate giveaways"],
+    cta: "Explore paper fillers",
     href: "/shredded-paper-fillers",
     image: "/assets/img/services/fillers.jpg",
   },
@@ -94,17 +109,26 @@ const REASONS = [
 ];
 
 const INDUSTRIES = [
-  "Beauty and cosmetics",
-  "Food and beverage",
-  "Retail and e-commerce",
-  "Fashion and lifestyle",
-  "Corporate and professional services",
-  "Advertising, PR, and marketing agencies",
-  "Technology and electronics",
-  "Real estate and property development",
-  "Events and activations",
-  "Startups and growing brands",
-];
+  ["Beauty and cosmetics", "Premium packaging for skincare, cosmetics, fragrances, beauty kits, influencer campaigns, and product launches."],
+  ["Food and beverage", "Custom printed packaging, gift boxes, promotional kits, beverage packaging, and presentation boxes."],
+  ["Retail and e-commerce", "Branded packaging designed to improve product presentation and customer unboxing experiences."],
+  ["Fashion and lifestyle", "Custom boxes for apparel, accessories, shoes, watches, jewelry, lifestyle products, and merchandise."],
+  ["Corporate and professional services", "Packaging for client gifts, employee kits, executive giveaways, company anniversaries, and corporate events."],
+  ["Advertising, PR, and marketing agencies", "Custom PR kits, influencer boxes, media kits, event packaging, brand activations, and campaign materials."],
+  ["Technology and electronics", "Custom packaging and presentation boxes for gadgets, accessories, corporate technology gifts, and promotional products."],
+  ["Real estate and property development", "Premium turnover kits, broker kits, welcome packages, property presentation kits, and client gifts."],
+  ["Events and activations", "Customized event boxes, launch kits, conference packages, media kits, promotional materials, and branded giveaways."],
+  ["Startups and growing brands", "Packaging solutions for businesses launching products, developing their branding, or upgrading from generic packaging."],
+] as const;
+
+const FEATURED_SOLUTIONS = [
+  ["Rigid boxes", "Premium presentation packaging for luxury products, corporate gifts, and high-value merchandise.", "/premium-packaging", "/assets/img/services/premium.jpg"],
+  ["PR boxes", "Customized campaign packaging designed for influencers, media, and product launches.", "/premium-packaging", "/assets/img/projects/premium/02-smart-parenting-8211-premium-canister-top-bottom/01.jpg"],
+  ["Corrugated boxes", "Durable packaging for shipping, e-commerce, product protection, and branded kits.", "/corrugated-box-packaging", "/assets/img/services/corrugated.jpg"],
+  ["Printed boxes", "Custom offset printed cartons for retail and consumer products.", "/offset-digital-packaging", "/assets/img/services/offset.jpg"],
+  ["Corporate packaging", "Professionally designed boxes for client gifts, employee kits, events, and giveaways.", "/premium-packaging", "/assets/img/projects/premium/04-shangri-la-8211-premium-basket-style-pr-kit-with/01.jpg"],
+  ["Handcrafted boxes", "Custom specialty packaging for unique presentation requirements.", "/projects", "/assets/img/about/cover.webp"],
+] as const;
 
 const PROCESS = [
   ["01", "Tell us what you need", "Send your preferred packaging type, size, quantity, artwork, product details, and other specifications."],
@@ -129,20 +153,20 @@ export default function Page() {
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/55 to-black/35" />
-        <div className="relative mx-auto w-full max-w-6xl px-5 pb-20 pt-32 md:px-8 md:pb-20 md:pt-28 2xl:pb-24 2xl:pt-36">
+        <div className="relative mx-auto w-full max-w-6xl px-5 pb-20 pt-32 md:px-8 md:pb-16 md:pt-24 2xl:pb-24 2xl:pt-32">
           <p className="micro-label mb-6 text-white/70">
-            Custom packaging · Printing · PR kits · Corporate boxes
+            Custom packaging · Printing · PR kits · Corporate boxes · Product packaging
           </p>
           <h1 className="max-w-4xl text-[clamp(2.25rem,4.5vw,4rem)] font-semibold leading-[1.02] tracking-[-0.025em] text-white">
             Custom packaging that makes your brand stand out.
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/85">
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/85 md:max-w-3xl">
             Premium custom boxes, PR kits, printed packaging, and corporate packaging solutions
             designed to protect your products, elevate your brand, and create a memorable customer
             experience. From concept and prototyping to production and delivery, Huswell Trading
             helps businesses turn packaging ideas into professionally crafted solutions.
           </p>
-          <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center">
+          <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center md:mt-8">
             <Link href="/#contact" className="btn-solid-dark w-full sm:w-auto">
               Get a custom quote
             </Link>
@@ -187,12 +211,17 @@ export default function Page() {
               </p>
               <p>
                 We provide custom packaging and printing solutions for businesses in the
-                Philippines, serving products, corporate gifts, marketing campaigns, PR kits,
-                events, and special projects. Our Quezon City team works closely with clients on
-                specifications, budget, branding, and intended use.
+                Philippines, serving companies that need reliable, creative, and professionally
+                produced packaging for products, corporate gifts, marketing campaigns, PR kits,
+                events, and special projects.
               </p>
               <p>
-                The goal is simple: turn your packaging idea into a solution that looks
+                From small customized requirements to larger production runs, our Quezon City team
+                works closely with clients to understand their specifications, budget, branding,
+                and intended use.
+              </p>
+              <p>
+                Our goal is simple: turn your packaging idea into a solution that looks
                 professional, performs well, and represents your brand properly.
               </p>
             </div>
@@ -228,7 +257,7 @@ export default function Page() {
           </p>
           <div className="mt-14 grid grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
             {SOLUTIONS.map((solution) => (
-              <article key={solution.title} className="group flex flex-col border-t border-line pt-5">
+              <article key={solution.title} className="group flex h-full flex-col border-t border-line pt-5">
                 <div className="border border-line bg-surface">
                   <Image
                     src={solution.image}
@@ -240,12 +269,17 @@ export default function Page() {
                   />
                 </div>
                 <h3 className="mt-5 text-xl font-medium tracking-tight text-ink">{solution.title}</h3>
-                  <p className="mt-3 flex-1 text-sm leading-relaxed text-mute line-clamp-4 sm:line-clamp-none">{solution.body}</p>
+                <p className="mt-3 text-sm leading-relaxed text-mute">{solution.body}</p>
+                <ul className="mb-6 mt-4 grid grid-cols-1 gap-x-4 gap-y-2 border-t border-line pt-4 text-xs leading-relaxed text-mute sm:grid-cols-2">
+                  {solution.idealFor.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
                 <Link
                   href={solution.href}
-                  className="mt-6 inline-flex w-fit border border-accent-hover px-4 py-3 text-sm font-medium text-accent-hover transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] hover:bg-accent-hover hover:text-white active:translate-y-px"
+                  className="mt-auto inline-flex w-full justify-center border border-accent-hover px-4 py-3 text-sm font-medium text-accent-hover transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] hover:bg-accent-hover hover:text-white active:translate-y-px sm:w-fit sm:justify-start"
                 >
-                  Explore this solution <span aria-hidden="true" className="ml-2">→</span>
+                  {solution.cta} <span aria-hidden="true" className="ml-2">→</span>
                 </Link>
               </article>
             ))}
@@ -285,10 +319,11 @@ export default function Page() {
             Huswell Trading works with businesses, organizations, agencies, and brands that need
             packaging built around the product, campaign, customer, and delivery requirement.
           </p>
-          <div className="mt-12 grid grid-cols-2 border-t border-line lg:grid-cols-5">
-            {INDUSTRIES.map((industry) => (
+          <div className="mt-12 grid grid-cols-1 border-t border-line sm:grid-cols-2 lg:grid-cols-5">
+            {INDUSTRIES.map(([industry, description]) => (
               <div key={industry} className="border-b border-line px-0 py-5 sm:px-5 lg:px-6">
                 <p className="text-base font-medium leading-snug tracking-tight text-ink">{industry}</p>
+                <p className="mt-2 text-sm leading-relaxed text-mute">{description}</p>
               </div>
             ))}
           </div>
@@ -352,8 +387,24 @@ export default function Page() {
             </Link>
           </div>
           <div className="grid grid-cols-1 gap-x-6 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
-            {PROJECTS.slice(0, 6).map((project) => (
-              <ProjectCard key={project.imgs[0]} project={project} />
+            {FEATURED_SOLUTIONS.map(([title, body, href, image]) => (
+              <Link key={title} href={href} className="group flex flex-col border-t border-line pt-5">
+                <div className="border border-line bg-surface">
+                  <Image
+                    src={image}
+                    alt={title}
+                    width={1200}
+                    height={900}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="aspect-[4/3] w-full object-cover transition-opacity duration-300 group-hover:opacity-90"
+                  />
+                </div>
+                <h3 className="mt-5 text-xl font-medium tracking-tight text-ink">{title}</h3>
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-mute">{body}</p>
+                <span className="mt-6 inline-flex w-full items-center justify-center border border-accent-hover px-4 py-3 text-sm font-medium text-accent-hover transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:bg-accent-hover group-hover:text-white sm:w-fit sm:justify-start">
+                  Explore this solution <span aria-hidden="true" className="ml-2 transition-transform duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:translate-x-1">→</span>
+                </span>
+              </Link>
             ))}
           </div>
         </div>
@@ -373,9 +424,13 @@ export default function Page() {
                 their products and campaigns.
               </p>
               <p>
-                From custom boxes and premium rigid boxes to corrugated packaging, PR kits,
-                folding cartons, corporate gift boxes, handcrafted boxes, inserts, and promotional
-                packaging, we develop solutions around the requirements of the project.
+                We work on projects involving custom boxes, premium rigid boxes, corrugated boxes,
+                PR boxes, printed packaging, corporate gift boxes, folding cartons, handcrafted
+                boxes, product packaging, and promotional packaging.
+              </p>
+              <p>
+                Instead of settling for generic packaging, businesses can develop packaging that
+                reflects their brand identity and improves how customers experience their products.
               </p>
               <p>
                 Whether you are preparing a product launch, corporate event, marketing campaign,
@@ -406,7 +461,7 @@ export default function Page() {
           <div className="md:col-span-4">
             <p className="micro-label mb-6 text-accent-hover">Frequently asked questions</p>
             <h2 className="text-3xl font-semibold leading-[1.05] tracking-[-0.02em] text-ink md:text-4xl">
-              Clear answers for custom packaging projects.
+              Frequently asked questions about custom packaging.
             </h2>
             <p className="mt-6 text-base leading-relaxed text-mute">
               Still need to discuss a requirement? Call {" "}
@@ -471,17 +526,24 @@ export default function Page() {
             </h2>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/80">
               Your packaging is often the first physical interaction customers have with your
-              product. Whether you need custom boxes, PR kits, corporate gift packaging,
+              product. Make it count. Whether you need custom boxes, PR kits, corporate gift packaging,
               corrugated boxes, rigid boxes, or printed packaging, Huswell Trading can help turn
               your requirements into a professionally crafted solution.
             </p>
+            <div className="mt-8 max-w-2xl border-t border-line-dark pt-6">
+              <p className="micro-label text-white/70">Tell us about your project</p>
+              <p className="mt-3 text-base leading-relaxed text-white/80">
+                Send your product or packaging requirement, preferred box style, dimensions,
+                quantity, artwork or logo, reference photo, and target completion date.
+              </p>
+            </div>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
               <Link href="/#contact" className="btn-solid-dark w-full sm:w-auto">
                 Request a custom quote
               </Link>
-              <a href={CONTACT.phoneHref} className="btn-line-dark w-full sm:w-auto">
-                {CONTACT.phone}
-              </a>
+              <Link href="/#contact" className="btn-line-dark w-full sm:w-auto">
+                Send your packaging requirements
+              </Link>
             </div>
           </div>
         </div>
