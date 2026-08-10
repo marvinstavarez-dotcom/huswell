@@ -68,8 +68,8 @@ const GALLERY_ASPECTS = ["aspect-[4/3]", "aspect-[3/4]", "aspect-square", "aspec
 
 const STATS = [
   { value: 11, suffix: "", label: "Years of experience" },
-  { value: 5000, suffix: "+", label: "Projects completed" },
-  { value: 500, suffix: "K+", label: "Boxes produced" },
+  { value: 10000, suffix: "+", label: "Projects completed" },
+  { value: 1, suffix: "M+", label: "Boxes produced" },
   { value: 100, suffix: "%", label: "Customized solutions" },
 ] as const;
 
