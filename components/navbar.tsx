@@ -71,9 +71,6 @@ export default function Navbar() {
               {p.label}
             </Link>
           ))}
-          <Link href="/#contact" className="btn-solid-light !px-5 !py-2.5">
-            Get a free quote
-          </Link>
         </nav>
 
         <button
@@ -135,9 +132,6 @@ export default function Navbar() {
             </Link>
           ))}
         </div>
-        <Link href="/#contact" className="btn-solid-light mt-8 w-full">
-          Get a free quote
-        </Link>
         <p className="mt-10 pb-8 text-sm text-mute">
           {CONTACT.email}
           <br />
