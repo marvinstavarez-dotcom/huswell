@@ -143,7 +143,7 @@ const PROCESS = [
 const STATS = [
   ["11", "Years of experience"],
   ["5,000+", "Projects completed"],
-  ["10,000", "Boxes produced"],
+  ["500K+", "Boxes produced"],
   ["100%", "Customized solutions"],
 ] as const;
 
