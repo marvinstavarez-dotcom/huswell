@@ -77,6 +77,43 @@ textarea {
   color: #fff;
 }
 
+.scroll-reveal {
+  transition: opacity 650ms cubic-bezier(0.25, 1, 0.5, 1), transform 650ms cubic-bezier(0.25, 1, 0.5, 1), clip-path 900ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.scroll-reveal--text {
+  opacity: 0;
+  transform: translateX(-1.5rem);
+}
+
+.scroll-reveal--image {
+  clip-path: inset(0 100% 0 0);
+}
+
+.scroll-reveal--short {
+  transition-delay: 120ms;
+}
+
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.scroll-reveal--image.is-visible {
+  clip-path: inset(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal,
+  .scroll-reveal--text,
+  .scroll-reveal--image {
+    clip-path: none;
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 @keyframes splash-line {
   0% {
     transform: scaleX(0);

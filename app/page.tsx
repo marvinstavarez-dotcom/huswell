@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import ContactSection from "@/components/contact-section";
+import ScrollReveal from "@/components/scroll-reveal";
 import TestimonialSlider from "@/components/testimonials";
 import { CONTACT, FAQS } from "@/lib/site-data";
 import { createPageMetadata } from "@/lib/seo";
@@ -115,7 +116,7 @@ export default function Page() {
 
       <section id="about" className="bg-canvas py-20 md:py-28">
         <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-12 px-5 md:grid-cols-12 md:items-center md:gap-16 md:px-8">
-          <div className="md:col-span-7">
+          <ScrollReveal className="md:col-span-7" variant="text">
             <p className="micro-label mb-6 text-accent-hover">Company overview</p>
             <h2 className="max-w-2xl text-3xl font-semibold leading-[1.05] tracking-[-0.02em] text-ink md:text-5xl">
               Packaging made for growing Philippine brands.
@@ -135,8 +136,8 @@ export default function Page() {
             <Link href="/company-profile" className="btn-line-light mt-10 w-full sm:w-auto">
               Company overview
             </Link>
-          </div>
-          <div className="md:col-span-5">
+          </ScrollReveal>
+          <ScrollReveal className="md:col-span-5" delay="short" variant="image">
             <div className="border border-line bg-surface">
               <Image
                 src="/images/watch.jpg"
@@ -147,13 +148,13 @@ export default function Page() {
                 className="aspect-[4/3] w-full object-cover"
               />
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
       <section id="capabilities" className="border-t border-line bg-canvas-alt py-20 md:py-28">
         <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-12 px-5 md:grid-cols-12 md:items-start md:gap-16 md:px-8">
-          <div className="md:col-span-7">
+          <ScrollReveal className="md:col-span-7" variant="text">
             <p className="micro-label mb-6 text-accent-hover">Manufacturing</p>
             <h2 className="max-w-3xl text-3xl font-semibold leading-[1.05] tracking-[-0.02em] text-ink md:text-5xl">
               Products &amp; Manufacturing Capabilities
@@ -180,8 +181,8 @@ export default function Page() {
                 <p className="micro-label mt-4 text-accent-hover">MOQ: 1,000 pcs</p>
               </article>
             </div>
-          </div>
-          <div className="border border-line bg-surface md:col-span-5">
+          </ScrollReveal>
+          <ScrollReveal className="border border-line bg-surface md:col-span-5" delay="short" variant="image">
             <Image
               src="/images/tumbler.jpg"
               alt="Custom Philippine heritage gift box with tumbler and accessories"
@@ -190,7 +191,7 @@ export default function Page() {
               sizes="(max-width: 768px) 100vw, 42vw"
               className="aspect-[4/5] w-full object-cover"
             />
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
