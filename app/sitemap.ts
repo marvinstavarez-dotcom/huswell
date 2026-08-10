@@ -9,7 +9,6 @@ const ROUTES = [
   "/offset-digital-packaging",
   "/corrugated-box-packaging",
   "/shredded-paper-fillers",
-  "/testimonials",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

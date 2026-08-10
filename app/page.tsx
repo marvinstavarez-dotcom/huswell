@@ -174,7 +174,7 @@ export default function Page() {
               Free box consultation
             </Link>
             <Link href="#solutions" className="btn-line-dark w-full sm:w-auto">
-              Explore packaging solutions
+              Our services
             </Link>
           </div>
         </div>
@@ -506,16 +506,13 @@ export default function Page() {
 
       <section className="border-t border-line bg-canvas py-20 md:py-28">
         <div className="mx-auto w-full max-w-6xl px-5 md:px-8">
-          <div className="mb-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <div className="mb-12">
             <div>
               <p className="micro-label mb-6 text-accent-hover">Client feedback</p>
               <h2 className="max-w-2xl text-3xl font-semibold leading-[1.05] tracking-[-0.02em] text-ink md:text-5xl">
                 Packaging partnerships built to last.
               </h2>
             </div>
-            <Link href="/testimonials" className="btn-line-light w-full sm:w-auto">
-              Read testimonials
-            </Link>
           </div>
           <TestimonialSlider />
         </div>
