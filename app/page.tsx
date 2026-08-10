@@ -150,7 +150,7 @@ const STATS = [
 export default function Page() {
   return (
     <main>
-      <section className="relative flex min-h-svh items-center overflow-hidden border-b border-line bg-canvas-dark">
+      <section className="relative overflow-hidden border-b border-line bg-canvas-dark">
         <Image
           src="/assets/img/hero/hero.jpg"
           alt="Custom packaging manufactured by Huswell Trading"
@@ -160,18 +160,14 @@ export default function Page() {
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-black/60" />
-        <div className="relative mx-auto w-full max-w-6xl px-5 py-28 text-center sm:py-32 md:px-8 md:py-36">
-          <p className="micro-label mb-6 text-white/70">
-            Custom packaging · Printing · PR kits · Corporate boxes · Product packaging
-          </p>
-          <h1 className="mx-auto max-w-4xl text-[clamp(2.25rem,4.5vw,4rem)] font-semibold leading-[1.02] tracking-[-0.025em] text-white">
+        <div className="relative mx-auto w-full max-w-6xl px-5 pb-20 pt-32 text-center md:px-8 md:pb-16 md:pt-24 2xl:pb-24 2xl:pt-32">
+          <p className="micro-label mb-6 text-white/70">Made in Philippines</p>
+          <h1 className="mx-auto max-w-4xl text-[clamp(2.75rem,6vw,5rem)] font-semibold leading-[1.02] tracking-[-0.025em] text-white">
             Custom Box Solutions
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/85 md:max-w-3xl">
-            Premium custom boxes, PR kits, printed packaging, and corporate packaging solutions
-            designed to protect your products, elevate your brand, and create a memorable customer
-            experience. From concept and prototyping to production and delivery, Huswell Trading
-            helps businesses turn packaging ideas into professionally crafted solutions.
+            Huswell Trading primarily serves small and medium enterprises (SMEs) across the
+            Philippines, while also catering to established local and international brands.
           </p>
           <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row sm:flex-wrap sm:items-center md:mt-8">
             <Link href="/#contact" className="btn-line-accent-dark w-full sm:w-auto">
