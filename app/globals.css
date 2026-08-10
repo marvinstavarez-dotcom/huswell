@@ -3,15 +3,15 @@
 @theme inline {
   --color-canvas: #FFFFFF;
   --color-canvas-alt: #ECE9E6;
-  --color-canvas-dark: #1B1B21;
+  --color-canvas-dark: #2B2926;
   --color-surface: #FFFFFF;
-  --color-surface-dark: #24242C;
-  --color-grease: #F1F1F6;
-  --color-ink: #17171D;
-  --color-mute: #5C5C66;
-  --color-mute-dark: #A9A9B4;
-  --color-line: #E3E4EC;
-  --color-line-dark: #3E3E48;
+  --color-surface-dark: #4A4743;
+  --color-grease: #ECE9E6;
+  --color-ink: #4A4743;
+  --color-mute: #7D7873;
+  --color-mute-dark: #D6D2CD;
+  --color-line: #D6D2CD;
+  --color-line-dark: #5E5A55;
   --color-accent: #D95148;
   --color-accent-hover: #C83D36;
   --font-sans: var(--font-space-grotesk);
