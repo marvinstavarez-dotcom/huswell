@@ -158,7 +158,7 @@ export default function Page() {
             Custom packaging · Printing · PR kits · Corporate boxes · Product packaging
           </p>
           <h1 className="max-w-4xl text-[clamp(2.25rem,4.5vw,4rem)] font-semibold leading-[1.02] tracking-[-0.025em] text-white">
-            Custom packaging that makes your brand stand out.
+            Custom box solutions.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/85 md:max-w-3xl">
             Premium custom boxes, PR kits, printed packaging, and corporate packaging solutions
