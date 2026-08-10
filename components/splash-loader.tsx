@@ -63,7 +63,6 @@ export default function SplashLoader() {
         <div className="mt-7 h-px w-12 overflow-hidden bg-line">
           <span className="block h-full w-full origin-left bg-accent-hover animate-[splash-line_1.1s_ease-in-out_infinite] motion-reduce:animate-none" />
         </div>
-        <p className="micro-label mt-4 text-mute">Custom box solutions</p>
       </div>
     </div>
   );
