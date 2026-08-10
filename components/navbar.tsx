@@ -7,6 +7,8 @@ import { useEffect, useState } from "react";
 import { CONTACT, SERVICES } from "@/lib/site-data";
 
 const PAGES = [
+  { href: "/#about", label: "About" },
+  { href: "/projects", label: "Projects" },
   { href: "/#contact", label: "Contact" },
 ];
 

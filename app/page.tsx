@@ -210,7 +210,7 @@ export default function Page() {
         </div>
       </nav>
 
-      <section className="bg-canvas py-20 md:py-28">
+      <section id="about" className="bg-canvas py-20 md:py-28">
         <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-12 px-5 md:grid-cols-12 md:items-center md:gap-16 md:px-8">
           <div className="md:col-span-7">
             <p className="micro-label mb-6 text-accent-hover">About Huswell Trading</p>
