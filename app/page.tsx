@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import heroWide from "@/public/hero/huswell-hero-wide.webp";
 import ContactSection from "@/components/contact-section";
+import StatsBar from "@/components/stats-bar";
 import TestimonialSlider from "@/components/testimonials";
 import { CONTACT, FAQS } from "@/lib/site-data";
 import { createPageMetadata } from "@/lib/seo";
@@ -66,10 +67,10 @@ const FEATURED_SOLUTIONS = [
 const GALLERY_ASPECTS = ["aspect-[4/3]", "aspect-[3/4]", "aspect-square", "aspect-[3/4]", "aspect-[4/3]", "aspect-square"] as const;
 
 const STATS = [
-  ["11", "Years of experience"],
-  ["5,000+", "Projects completed"],
-  ["500K+", "Boxes produced"],
-  ["100%", "Customized solutions"],
+  { value: 11, suffix: "", label: "Years of experience" },
+  { value: 5000, suffix: "+", label: "Projects completed" },
+  { value: 500, suffix: "K+", label: "Boxes produced" },
+  { value: 100, suffix: "%", label: "Customized solutions" },
 ] as const;
 
 export default function Page() {
@@ -105,16 +106,7 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="border-b border-line bg-surface py-12 md:py-16" aria-label="Huswell Trading statistics">
-        <div className="mx-auto grid w-full max-w-6xl grid-cols-2 gap-x-6 gap-y-10 px-5 text-center md:grid-cols-4 md:px-8">
-          {STATS.map(([value, label]) => (
-            <div key={label}>
-              <p className="text-3xl font-semibold tracking-[-0.03em] text-ink md:text-4xl">{value}</p>
-              <p className="micro-label mt-3 text-mute">{label}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+      <StatsBar stats={STATS} />
 
       <section id="about" className="split-panel split-panel--canvas bg-canvas py-20 md:py-28">
         <div className="relative z-10 mx-auto w-full max-w-6xl px-5 md:px-8">
