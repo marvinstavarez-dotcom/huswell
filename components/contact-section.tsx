@@ -3,8 +3,7 @@
 import { useState } from "react";
 import { CONTACT } from "@/lib/site-data";
 
-const FORMSPREE_ID = process.env.NEXT_PUBLIC_FORMSPREE_ID ?? "";
-const configured = FORMSPREE_ID.length > 0;
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/mqpzpyag";
 
 type Status = "idle" | "sending" | "sent" | "error";
 
@@ -15,17 +14,12 @@ export default function ContactSection() {
     e.preventDefault();
     const form = e.currentTarget;
 
-    if (!configured) {
-      setStatus("error");
-      return;
-    }
-
     setStatus("sending");
     const data = new FormData(form);
     data.set("_subject", "Huswell Trading website — contact message");
 
     try {
-      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
         method: "POST",
         body: data,
         headers: { Accept: "application/json" },
@@ -146,9 +140,7 @@ export default function ContactSection() {
               )}
               {status === "error" && (
                 <p className="md:col-span-2 text-sm text-mute">
-                  {configured
-                    ? "Something went wrong — please try again or email us at"
-                    : "The contact form is still being set up — for now please email us at"}{" "}
+                  Something went wrong — please try again or email us at{" "}
                   <a
                     href={`mailto:${CONTACT.email}`}
                     className="underline underline-offset-4 decoration-accent"
