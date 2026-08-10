@@ -57,7 +57,7 @@ export default function SplashLoader() {
           alt="Huswell Trading"
           width={1536}
           height={712}
-          className="h-auto w-56 sm:w-64"
+          className="h-auto w-56 sm:w-72 lg:w-[30rem] 2xl:w-[34rem]"
           priority
         />
         <div className="mt-7 h-px w-12 overflow-hidden bg-line">
