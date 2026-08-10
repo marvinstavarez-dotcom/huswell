@@ -117,7 +117,7 @@ summary::-webkit-details-marker {
     @apply inline-flex min-h-12 max-w-full items-center justify-center gap-3 whitespace-normal border border-grease/40 px-7 py-3.5 text-center text-[12px] font-medium uppercase tracking-[0.18em] text-grease transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] hover:border-grease hover:bg-grease hover:text-canvas-dark active:translate-y-px disabled:pointer-events-none disabled:opacity-50;
   }
   .btn-line-accent-dark {
-    @apply inline-flex min-h-12 max-w-full items-center justify-center gap-3 whitespace-normal border border-accent-hover px-7 py-3.5 text-center text-[12px] font-medium uppercase tracking-[0.18em] text-white transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] hover:border-[#A9322C] hover:bg-[#A9322C] active:translate-y-px disabled:pointer-events-none disabled:opacity-50;
+    @apply inline-flex min-h-12 max-w-full items-center justify-center gap-3 whitespace-normal border border-accent-hover px-7 py-3.5 text-center text-[12px] font-medium uppercase tracking-[0.18em] text-accent-hover transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] hover:border-[#A9322C] hover:bg-[#A9322C] hover:text-white active:translate-y-px disabled:pointer-events-none disabled:opacity-50;
   }
   .btn-solid-light {
     @apply inline-flex min-h-12 max-w-full items-center justify-center gap-3 whitespace-normal border border-accent-hover bg-accent-hover px-7 py-3.5 text-center text-[12px] font-medium uppercase tracking-[0.18em] text-white transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] hover:border-[#A9322C] hover:bg-[#A9322C] active:translate-y-px disabled:pointer-events-none disabled:opacity-50;
