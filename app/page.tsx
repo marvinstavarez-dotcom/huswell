@@ -152,8 +152,8 @@ export default function Page() {
     <main>
       <section className="relative overflow-hidden border-b border-line bg-canvas-dark">
         <Image
-          src="/assets/img/hero/hero.jpg"
-          alt="Custom packaging manufactured by Huswell Trading"
+          src="/hero/huswell-hero-wide.png"
+          alt="Philippine-themed custom presentation boxes made by Huswell Trading"
           fill
           priority
           sizes="100vw"
