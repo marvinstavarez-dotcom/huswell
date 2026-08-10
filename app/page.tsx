@@ -140,6 +140,13 @@ const PROCESS = [
   ["07", "Pickup or delivery", "Orders can be prepared for pickup or coordinated for delivery based on your project requirements."],
 ];
 
+const STATS = [
+  ["11", "Years of experience"],
+  ["5,000+", "Projects completed"],
+  ["10,000", "Boxes produced"],
+  ["100%", "Customized solutions"],
+] as const;
+
 export default function Page() {
   return (
     <main>
@@ -174,6 +181,17 @@ export default function Page() {
               Explore packaging solutions
             </Link>
           </div>
+        </div>
+      </section>
+
+      <section className="border-b border-line bg-surface py-12 md:py-16" aria-label="Huswell Trading statistics">
+        <div className="mx-auto grid w-full max-w-6xl grid-cols-2 gap-x-6 gap-y-10 px-5 text-center md:grid-cols-4 md:px-8">
+          {STATS.map(([value, label]) => (
+            <div key={label}>
+              <p className="text-3xl font-semibold tracking-[-0.03em] text-ink md:text-4xl">{value}</p>
+              <p className="micro-label mt-3 text-mute">{label}</p>
+            </div>
+          ))}
         </div>
       </section>
 
