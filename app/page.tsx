@@ -174,7 +174,7 @@ export default function Page() {
             helps businesses turn packaging ideas into professionally crafted solutions.
           </p>
           <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row sm:flex-wrap sm:items-center md:mt-8">
-            <Link href="/#contact" className="btn-solid-dark w-full sm:w-auto">
+            <Link href="/#contact" className="btn-line-accent-dark w-full sm:w-auto">
               Free box consultation
             </Link>
             <Link href="#solutions" className="btn-line-dark w-full sm:w-auto">
