@@ -44,7 +44,7 @@ export default function Navbar() {
             alt="Huswell Trading logo"
             width={1536}
             height={739}
-            className="h-14 w-auto"
+            className={`h-14 w-auto ${lightText ? "" : "contrast-125 saturate-150"}`}
             priority
           />
         </Link>
