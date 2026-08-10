@@ -19,7 +19,7 @@ export default function Footer() {
               alt="Huswell Trading logo"
               width={140}
               height={32}
-              className="h-8 w-auto"
+              className="h-10 w-auto"
             />
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-mute">
               Premium box packaging, rigid boxes, offset &amp; digital printing, corrugated
