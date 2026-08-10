@@ -77,40 +77,26 @@ textarea {
   color: #fff;
 }
 
-.scroll-reveal {
-  transition: opacity 650ms cubic-bezier(0.25, 1, 0.5, 1), transform 650ms cubic-bezier(0.25, 1, 0.5, 1), clip-path 900ms cubic-bezier(0.25, 1, 0.5, 1);
-}
 
-.scroll-reveal--text {
-  opacity: 0;
-  transform: translateX(-1.5rem);
-}
+@media (min-width: 768px) {
+  .split-panel {
+    position: relative;
+    overflow: hidden;
+  }
 
-.scroll-reveal--image {
-  clip-path: inset(0 100% 0 0);
-}
+  .split-panel-media::after {
+    position: absolute;
+    inset: 0;
+    content: "";
+    pointer-events: none;
+  }
 
-.scroll-reveal--short {
-  transition-delay: 120ms;
-}
+  .split-panel--canvas .split-panel-media::after {
+    background: linear-gradient(to right, var(--color-canvas) 0%, color-mix(in srgb, var(--color-canvas) 86%, transparent) 42%, transparent 70%);
+  }
 
-.scroll-reveal.is-visible {
-  opacity: 1;
-  transform: none;
-}
-
-.scroll-reveal--image.is-visible {
-  clip-path: inset(0);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .scroll-reveal,
-  .scroll-reveal--text,
-  .scroll-reveal--image {
-    clip-path: none;
-    opacity: 1;
-    transform: none;
-    transition: none;
+  .split-panel--canvas-alt .split-panel-media::after {
+    background: linear-gradient(to right, var(--color-canvas-alt) 0%, color-mix(in srgb, var(--color-canvas-alt) 86%, transparent) 42%, transparent 70%);
   }
 }
 

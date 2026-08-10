@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import heroWide from "@/public/hero/huswell-hero-wide.webp";
 import ContactSection from "@/components/contact-section";
-import ScrollReveal from "@/components/scroll-reveal";
 import TestimonialSlider from "@/components/testimonials";
 import { CONTACT, FAQS } from "@/lib/site-data";
 import { createPageMetadata } from "@/lib/seo";
@@ -63,6 +63,8 @@ const FEATURED_SOLUTIONS = [
   ["Handcrafted boxes", "Custom specialty packaging for unique presentation requirements.", "/projects", "/assets/img/about/cover.webp"],
 ] as const;
 
+const GALLERY_ASPECTS = ["aspect-[4/3]", "aspect-[3/4]", "aspect-square", "aspect-[3/4]", "aspect-[4/3]", "aspect-square"] as const;
+
 const STATS = [
   ["11", "Years of experience"],
   ["5,000+", "Projects completed"],
@@ -75,10 +77,10 @@ export default function Page() {
     <main>
       <section className="relative overflow-hidden border-b border-line bg-canvas-dark">
         <Image
-          src="/hero/huswell-hero-wide.png"
+          src={heroWide}
           alt="Philippine-themed custom presentation boxes made by Huswell Trading"
           fill
-          priority
+          preload
           sizes="100vw"
           className="absolute inset-0 h-full w-full object-cover"
         />
@@ -114,9 +116,9 @@ export default function Page() {
         </div>
       </section>
 
-      <section id="about" className="bg-canvas py-20 md:py-28">
-        <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-12 px-5 md:grid-cols-12 md:items-center md:gap-16 md:px-8">
-          <ScrollReveal className="md:col-span-7" variant="text">
+      <section id="about" className="split-panel split-panel--canvas bg-canvas py-20 md:py-28">
+        <div className="relative z-10 mx-auto w-full max-w-6xl px-5 md:px-8">
+          <div className="max-w-2xl">
             <p className="micro-label mb-6 text-accent-hover">Company overview</p>
             <h2 className="max-w-2xl text-3xl font-semibold leading-[1.05] tracking-[-0.02em] text-ink md:text-5xl">
               Packaging made for growing Philippine brands.
@@ -136,25 +138,32 @@ export default function Page() {
             <Link href="/company-profile" className="btn-line-light mt-10 w-full sm:w-auto">
               Company overview
             </Link>
-          </ScrollReveal>
-          <ScrollReveal className="md:col-span-5" delay="short" variant="image">
-            <div className="border border-line bg-surface">
-              <Image
-                src="/images/watch.jpg"
-                alt="Custom Philippine heritage presentation box for a watch"
-                width={1448}
-                height={1086}
-                sizes="(max-width: 768px) 100vw, 42vw"
-                className="aspect-[4/3] w-full object-cover"
-              />
-            </div>
-          </ScrollReveal>
+          </div>
+          <div className="split-panel-media relative mt-12 aspect-[4/3] w-full overflow-hidden border border-line bg-surface md:hidden">
+            <Image
+              src="/images/watch.jpg"
+              alt="Custom Philippine heritage presentation box for a watch"
+              width={1448}
+              height={1086}
+              sizes="100vw"
+              className="h-full w-full object-cover"
+            />
+          </div>
+        </div>
+        <div className="split-panel-media absolute inset-y-0 right-0 hidden w-1/2 md:block">
+          <Image
+            src="/images/watch.jpg"
+            alt=""
+            fill
+            sizes="50vw"
+            className="object-cover"
+          />
         </div>
       </section>
 
-      <section id="capabilities" className="border-t border-line bg-canvas-alt py-20 md:py-28">
-        <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-12 px-5 md:grid-cols-12 md:items-start md:gap-16 md:px-8">
-          <ScrollReveal className="md:col-span-7" variant="text">
+      <section id="capabilities" className="split-panel split-panel--canvas-alt border-t border-line bg-canvas-alt py-20 md:py-28">
+        <div className="relative z-10 mx-auto w-full max-w-6xl px-5 md:px-8">
+          <div className="max-w-3xl">
             <p className="micro-label mb-6 text-accent-hover">Manufacturing</p>
             <h2 className="max-w-3xl text-3xl font-semibold leading-[1.05] tracking-[-0.02em] text-ink md:text-5xl">
               Products &amp; Manufacturing Capabilities
@@ -181,17 +190,26 @@ export default function Page() {
                 <p className="micro-label mt-4 text-accent-hover">MOQ: 1,000 pcs</p>
               </article>
             </div>
-          </ScrollReveal>
-          <ScrollReveal className="border border-line bg-surface md:col-span-5" delay="short" variant="image">
+          </div>
+          <div className="split-panel-media relative mt-12 aspect-[4/5] w-full overflow-hidden border border-line bg-surface md:hidden">
             <Image
               src="/images/tumbler.jpg"
               alt="Custom Philippine heritage gift box with tumbler and accessories"
               width={1122}
               height={1402}
-              sizes="(max-width: 768px) 100vw, 42vw"
-              className="aspect-[4/5] w-full object-cover"
+              sizes="100vw"
+              className="h-full w-full object-cover"
             />
-          </ScrollReveal>
+          </div>
+        </div>
+        <div className="split-panel-media absolute inset-y-0 right-0 hidden w-1/2 md:block">
+          <Image
+            src="/images/tumbler.jpg"
+            alt=""
+            fill
+            sizes="50vw"
+            className="object-cover"
+          />
         </div>
       </section>
 
@@ -251,24 +269,32 @@ export default function Page() {
               View all projects
             </Link>
           </div>
-          <div className="grid grid-cols-1 gap-x-6 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
-            {FEATURED_SOLUTIONS.map(([title, body, href, image]) => (
-              <Link key={title} href={href} className="group flex flex-col border-t border-line pt-5">
-                <div className="border border-line bg-surface">
+          <div className="columns-1 gap-4 sm:columns-2 lg:columns-3">
+            {FEATURED_SOLUTIONS.map(([title, body, href, image], index) => (
+              <Link
+                key={title}
+                href={href}
+                className="group mb-4 block break-inside-avoid overflow-hidden border border-line bg-surface focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+              >
+                <div className={`relative overflow-hidden ${GALLERY_ASPECTS[index]}`}>
                   <Image
                     src={image}
                     alt={title}
                     width={1200}
                     height={900}
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="aspect-[4/3] w-full object-cover transition-opacity duration-300 group-hover:opacity-90"
+                    className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                   />
+                  <div className="absolute inset-0 flex flex-col justify-end bg-canvas-dark/0 p-5 opacity-0 transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:bg-canvas-dark/70 group-hover:opacity-100 group-focus-visible:bg-canvas-dark/70 group-focus-visible:opacity-100">
+                    <h3 className="text-xl font-medium tracking-tight text-white">{title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-white/80">{body}</p>
+                    <span className="micro-label mt-5 text-white">Explore solution →</span>
+                  </div>
                 </div>
-                <h3 className="mt-5 text-xl font-medium tracking-tight text-ink">{title}</h3>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-mute">{body}</p>
-                <span className="mt-6 inline-flex w-full items-center justify-center border border-accent-hover px-4 py-3 text-sm font-medium text-accent-hover transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:bg-accent-hover group-hover:text-white sm:w-fit sm:justify-start">
-                  Explore this solution <span aria-hidden="true" className="ml-2 transition-transform duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:translate-x-1">→</span>
-                </span>
+                <div className="p-5 sm:hidden">
+                  <h3 className="text-xl font-medium tracking-tight text-ink">{title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-mute">{body}</p>
+                </div>
               </Link>
             ))}
           </div>

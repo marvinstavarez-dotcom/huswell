@@ -32,7 +32,7 @@ const securityHeaders = [
 const nextConfig: NextConfig = {
   poweredByHeader: false,
   images: {
-    formats: ["image/avif", "image/webp"],
+    formats: ["image/webp", "image/avif"],
   },
   async headers() {
     return [
