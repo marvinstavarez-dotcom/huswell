@@ -31,6 +31,9 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   alternates: { canonical: "/" },
   robots: { index: true, follow: true },
+  verification: {
+    google: "KTfBZrMeLrMoC3s7FqKUgqbMrzWbGKi9WMEPbdojmMg",
+  },
   openGraph: {
     title: "Custom Packaging Supplier in the Philippines | Huswell Trading",
     description:
