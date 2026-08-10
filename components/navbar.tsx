@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CONTACT, SERVICES } from "@/lib/site-data";
 
 const PAGES = [
@@ -14,12 +14,28 @@ const PAGES = [
 export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const isActive = (href: string) => pathname === href;
+  const transparent = !scrolled;
+  const lightText = transparent && pathname === "/";
+
+  useEffect(() => {
+    const updateScrollState = () => setScrolled(window.scrollY > 8);
+
+    updateScrollState();
+    window.addEventListener("scroll", updateScrollState, { passive: true });
+
+    return () => window.removeEventListener("scroll", updateScrollState);
+  }, []);
 
   return (
     <>
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-line bg-canvas/95 backdrop-blur-md">
+      <header
+        className={`fixed inset-x-0 top-0 z-50 border-b transition-colors duration-300 ${
+          transparent ? "border-transparent bg-transparent" : "border-line bg-canvas/95 backdrop-blur-md"
+        }`}
+      >
       <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-5 md:px-8">
         <Link href="/" className="block" aria-label="Huswell Trading — home">
           <Image
@@ -36,6 +52,7 @@ export default function Navbar() {
           <NavDropdown
             label="Services"
             active={SERVICES.some((s) => pathname === `/${s.slug}`)}
+            lightText={lightText}
             pathname={pathname}
             items={SERVICES.map((s) => ({ href: `/${s.slug}`, label: s.label }))}
           />
@@ -44,7 +61,11 @@ export default function Navbar() {
               key={p.href}
               href={p.href}
               className={`text-[11px] font-medium uppercase tracking-[0.22em] transition-colors duration-300 ${
-                isActive(p.href) ? "text-accent-hover" : "text-ink hover:text-accent-hover"
+                isActive(p.href)
+                  ? "text-accent-hover"
+                  : lightText
+                    ? "text-white hover:text-white/75"
+                    : "text-ink hover:text-accent-hover"
               }`}
             >
               {p.label}
@@ -64,17 +85,17 @@ export default function Navbar() {
         >
           <span className="relative block h-4 w-6">
             <span
-              className={`absolute left-0 top-0 h-px w-full bg-ink transition-transform duration-300 ${
+              className={`absolute left-0 top-0 h-px w-full ${lightText ? "bg-white" : "bg-ink"} transition-transform duration-300 ${
                 open ? "translate-y-[7px] rotate-45" : ""
               }`}
             />
             <span
-              className={`absolute left-0 top-1/2 h-px w-full -translate-y-1/2 bg-ink transition-opacity duration-300 ${
+              className={`absolute left-0 top-1/2 h-px w-full -translate-y-1/2 ${lightText ? "bg-white" : "bg-ink"} transition-opacity duration-300 ${
                 open ? "opacity-0" : ""
               }`}
             />
             <span
-              className={`absolute left-0 bottom-0 h-px w-full bg-ink transition-transform duration-300 ${
+              className={`absolute left-0 bottom-0 h-px w-full ${lightText ? "bg-white" : "bg-ink"} transition-transform duration-300 ${
                 open ? "-translate-y-[7px] -rotate-45" : ""
               }`}
             />
@@ -130,11 +151,13 @@ export default function Navbar() {
 function NavDropdown({
   label,
   active,
+  lightText,
   pathname,
   items,
 }: {
   label: string;
   active: boolean;
+  lightText: boolean;
   pathname: string;
   items: { href: string; label: string }[];
 }) {
@@ -151,7 +174,11 @@ function NavDropdown({
         onClick={() => setOpen(!open)}
         aria-expanded={open}
         className={`flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.22em] transition-colors duration-300 ${
-          active || open ? "text-accent-hover" : "text-ink hover:text-accent-hover"
+          active || open
+            ? "text-accent-hover"
+            : lightText
+              ? "text-white hover:text-white/75"
+              : "text-ink hover:text-accent-hover"
         }`}
       >
         {label}
