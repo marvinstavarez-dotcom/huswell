@@ -191,25 +191,6 @@ export default function Page() {
         </div>
       </section>
 
-      <nav className="border-b border-line bg-canvas lg:hidden" aria-label="Homepage sections">
-        <div className="mx-auto grid w-full max-w-6xl grid-cols-2 px-5 sm:grid-cols-4 md:px-8">
-          {[
-            ["Solutions", "#solutions"],
-            ["Process", "#process"],
-            ["FAQs", "#faqs"],
-            ["Quote", "#contact"],
-          ].map(([label, href]) => (
-            <Link
-              key={href}
-              href={href}
-              className="border-b border-r border-line px-3 py-4 text-center text-[11px] font-medium uppercase tracking-[0.1em] text-ink transition-colors hover:bg-canvas-alt hover:text-accent-hover sm:border-b-0 sm:tracking-[0.14em]"
-            >
-              {label}
-            </Link>
-          ))}
-        </div>
-      </nav>
-
       <section id="about" className="bg-canvas py-20 md:py-28">
         <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-12 px-5 md:grid-cols-12 md:items-center md:gap-16 md:px-8">
           <div className="md:col-span-7">
