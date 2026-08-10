@@ -53,7 +53,7 @@ export const businessSchema = {
   description:
     "Custom packaging supplier in the Philippines for rigid boxes, PR kits, printed packaging, corrugated boxes, corporate gift boxes, and paper fillers.",
   url: SITE_URL,
-  logo: `${SITE_URL}/assets/img/logo.webp`,
+  logo: `${SITE_URL}/logo/huswell-logo.png`,
   image: `${SITE_URL}${DEFAULT_IMAGE}`,
   foundingDate: "2015",
   email: CONTACT.email,

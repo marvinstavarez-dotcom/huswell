@@ -39,11 +39,11 @@ export default function Navbar() {
       <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-5 md:px-8">
         <Link href="/" className="block" aria-label="Huswell Trading — home">
           <Image
-            src="/assets/img/logo.webp"
+            src="/logo/huswell-logo.png"
             alt="Huswell Trading logo"
-            width={140}
-            height={32}
-            className="h-10 w-auto sm:h-11"
+            width={1536}
+            height={739}
+            className="h-14 w-auto"
             priority
           />
         </Link>

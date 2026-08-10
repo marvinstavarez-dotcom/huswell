@@ -15,11 +15,11 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-12 md:grid-cols-12">
           <div className="md:col-span-5">
             <Image
-              src="/assets/img/logo.webp"
+              src="/logo/huswell-logo.png"
               alt="Huswell Trading logo"
-              width={140}
-              height={32}
-              className="h-10 w-auto"
+              width={1536}
+              height={739}
+              className="h-14 w-auto"
             />
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-mute">
               Premium box packaging, rigid boxes, offset &amp; digital printing, corrugated
