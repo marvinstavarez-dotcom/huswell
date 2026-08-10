@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import ContactSection from "@/components/contact-section";
 import TestimonialSlider from "@/components/testimonials";
-import VideoStory from "@/components/video-story";
 import { CONTACT, FAQS } from "@/lib/site-data";
 import { createPageMetadata } from "@/lib/seo";
 
@@ -13,73 +12,6 @@ export const metadata: Metadata = createPageMetadata({
     "Custom packaging, rigid boxes, PR kits, printed cartons, corrugated boxes, corporate gift packaging, and paper fillers for brands across the Philippines.",
   path: "/",
 });
-
-const SOLUTIONS = [
-  {
-    title: "Premium rigid boxes",
-    body: "Create a high-end presentation with professionally crafted custom rigid boxes.",
-    idealFor: ["Corporate gifts", "Luxury products", "Beauty and cosmetics", "Jewelry and accessories", "VIP kits", "Special edition products"],
-    cta: "Request a rigid box quote",
-    href: "/premium-packaging",
-    image: "/assets/img/services/premium.jpg",
-  },
-  {
-    title: "Custom PR boxes and influencer kits",
-    body: "Make your product launch or campaign memorable with customized PR boxes and influencer kits.",
-    idealFor: ["Product launches", "Influencer campaigns", "Media kits", "Brand activations", "Press kits", "Corporate events"],
-    cta: "Build your PR kit",
-    href: "/premium-packaging",
-    image: "/assets/img/projects/premium/02-smart-parenting-8211-premium-canister-top-bottom/01.jpg",
-  },
-  {
-    title: "Corrugated boxes",
-    body: "Durable and practical custom corrugated packaging for businesses that require strength, protection, and flexibility.",
-    idealFor: ["E-commerce shipping", "Product packaging", "Subscription boxes", "Corporate kits", "Food and beverage packaging", "Heavy or fragile products"],
-    cta: "Explore corrugated boxes",
-    href: "/corrugated-box-packaging",
-    image: "/assets/img/services/corrugated.jpg",
-  },
-  {
-    title: "Offset printed boxes and folding cartons",
-    body: "Professional printed product packaging for brands that need consistent colors, detailed graphics, and scalable production.",
-    idealFor: ["Cosmetics", "Food products", "Supplements", "Retail merchandise", "Pharmaceutical packaging", "Consumer goods"],
-    cta: "Explore printed packaging",
-    href: "/offset-digital-packaging",
-    image: "/assets/img/services/offset.jpg",
-  },
-  {
-    title: "Paper mache and handcrafted boxes",
-    body: "Customizable paper mache boxes and specialty handcrafted packaging in shapes, sizes, colors, textures, and designs suited to your application.",
-    idealFor: ["Gift packaging", "Corporate giveaways", "Keepsake boxes", "Home and lifestyle products", "Special events", "Creative projects"],
-    cta: "Explore handcrafted boxes",
-    href: "/projects",
-    image: "/assets/img/about/cover.webp",
-  },
-  {
-    title: "Corporate gift and giveaway packaging",
-    body: "Transform ordinary corporate giveaways into professionally presented gifts with customized inserts, branding, and special finishing.",
-    idealFor: ["Employee gifts", "Client appreciation gifts", "Company anniversaries", "Executive gifts", "Conference kits", "Event giveaways"],
-    cta: "Plan corporate packaging",
-    href: "/premium-packaging",
-    image: "/assets/img/projects/premium/04-shangri-la-8211-premium-basket-style-pr-kit-with/01.jpg",
-  },
-  {
-    title: "Custom inserts and packaging accessories",
-    body: "Internal packaging components designed to hold and present your products properly.",
-    idealFor: ["Paperboard inserts", "Foam inserts", "Product dividers", "Custom compartments", "Fabric interiors", "Printed cards"],
-    cta: "Discuss packaging inserts",
-    href: "/premium-packaging",
-    image: "/assets/img/projects/premium/14-conrad-8211-drawer-box-with-textured-cover-and-d/01.jpg",
-  },
-  {
-    title: "Shredded paper fillers",
-    body: "Crinkled-cut paper fillers in 20 colors for stylish cushioning, gift-box decoration, product protection, and stronger unboxing presentation.",
-    idealFor: ["Gift boxes", "Fragile products", "Retail presentation", "Corporate giveaways"],
-    cta: "Explore paper fillers",
-    href: "/shredded-paper-fillers",
-    image: "/assets/img/services/fillers.jpg",
-  },
-];
 
 const REASONS = [
   {
@@ -130,16 +62,6 @@ const FEATURED_SOLUTIONS = [
   ["Handcrafted boxes", "Custom specialty packaging for unique presentation requirements.", "/projects", "/assets/img/about/cover.webp"],
 ] as const;
 
-const PROCESS = [
-  ["01", "Tell us what you need", "Send your preferred packaging type, size, quantity, artwork, product details, and other specifications."],
-  ["02", "We review your requirements", "Our team evaluates materials, structure, printing, finishing, and production requirements."],
-  ["03", "Receive your quotation", "We prepare a quotation based on the approved project specifications and quantity."],
-  ["04", "Approve the design or sample", "Depending on the project, artwork, mock-ups, or physical samples are reviewed before mass production."],
-  ["05", "Production", "Once approved, your order moves into production based on the agreed specifications and schedule."],
-  ["06", "Quality checking", "Finished packaging is checked against the approved requirements before release."],
-  ["07", "Pickup or delivery", "Orders can be prepared for pickup or coordinated for delivery based on your project requirements."],
-];
-
 const STATS = [
   ["11", "Years of experience"],
   ["5,000+", "Projects completed"],
@@ -159,7 +81,7 @@ export default function Page() {
           sizes="100vw"
           className="absolute inset-0 h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-black/40" />
         <div className="relative mx-auto w-full max-w-6xl px-5 pb-20 pt-32 text-center md:px-8 md:pb-16 md:pt-24 2xl:pb-24 2xl:pt-32">
           <p className="micro-label mb-6 text-white/70">Designed &amp; Made in the Philippines</p>
           <h1 className="mx-auto max-w-4xl text-[clamp(2.75rem,6vw,5rem)] font-semibold leading-[1.02] tracking-[-0.025em] text-white">
@@ -173,8 +95,8 @@ export default function Page() {
             <Link href="/#contact" className="btn-solid-dark w-full sm:w-auto">
               Free box consultation
             </Link>
-            <Link href="#solutions" className="btn-line-dark w-full sm:w-auto">
-              Our services
+            <Link href="#capabilities" className="btn-line-dark w-full sm:w-auto">
+              Manufacturing capabilities
             </Link>
           </div>
         </div>
@@ -194,34 +116,24 @@ export default function Page() {
       <section id="about" className="bg-canvas py-20 md:py-28">
         <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-12 px-5 md:grid-cols-12 md:items-center md:gap-16 md:px-8">
           <div className="md:col-span-7">
-            <p className="micro-label mb-6 text-accent-hover">About Huswell Trading</p>
+            <p className="micro-label mb-6 text-accent-hover">Company overview</p>
             <h2 className="max-w-2xl text-3xl font-semibold leading-[1.05] tracking-[-0.02em] text-ink md:text-5xl">
-              More than a box. We build packaging experiences.
+              Packaging made for growing Philippine brands.
             </h2>
             <div className="mt-8 max-w-2xl space-y-5 text-lg leading-relaxed text-mute">
               <p>
-                Great packaging should do more than protect what is inside. It should communicate
-                your brand, improve product presentation, and create an experience customers
-                remember.
+                Established in 2015, Huswell Trading creates custom box solutions for small and
+                medium enterprises nationwide. Our Quezon City production team handles rigid boxes
+                and PR kit boxes in-house.
               </p>
               <p>
-                We provide custom packaging and printing solutions for businesses in the
-                Philippines, serving companies that need reliable, creative, and professionally
-                produced packaging for products, corporate gifts, marketing campaigns, PR kits,
-                events, and special projects.
-              </p>
-              <p>
-                From small customized requirements to larger production runs, our Quezon City team
-                works closely with clients to understand their specifications, budget, branding,
-                and intended use.
-              </p>
-              <p>
-                Our goal is simple: turn your packaging idea into a solution that looks
-                professional, performs well, and represents your brand properly.
+                We also supply custom corrugated boxes and offset-printed folding cartons, giving
+                brands one practical partner for premium presentation, shipping, storage, and
+                retail packaging.
               </p>
             </div>
-            <Link href="#process" className="btn-line-light mt-10 w-full sm:w-auto">
-              Our packaging process
+            <Link href="/company-profile" className="btn-line-light mt-10 w-full sm:w-auto">
+              Company overview
             </Link>
           </div>
           <div className="md:col-span-5">
@@ -239,50 +151,50 @@ export default function Page() {
         </div>
       </section>
 
-      <section id="solutions" className="border-t border-line bg-canvas-alt py-20 md:py-28">
-        <div className="mx-auto w-full max-w-6xl px-5 md:px-8">
-          <p className="micro-label mb-6 text-accent-hover">Our packaging services</p>
-          <h2 className="max-w-3xl text-3xl font-semibold leading-[1.05] tracking-[-0.02em] text-ink md:text-5xl">
-            Custom packaging solutions for every brand.
-          </h2>
-          <p className="mt-6 max-w-3xl text-lg leading-relaxed text-mute">
-            Whether you are launching a product, preparing a PR campaign, creating corporate
-            giveaways, or upgrading existing packaging, we tailor the structure, material,
-            printing, and finish to your requirements.
-          </p>
-          <div className="mt-14 grid grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
-            {SOLUTIONS.map((solution) => (
-              <article key={solution.title} className="group flex h-full flex-col border-t border-line pt-5">
-                <div className="border border-line bg-surface">
-                  <Image
-                    src={solution.image}
-                    alt={solution.title}
-                    width={1200}
-                    height={900}
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="aspect-[4/3] w-full object-cover transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:opacity-90"
-                  />
-                </div>
-                <h3 className="mt-5 text-xl font-medium tracking-tight text-ink">{solution.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-mute">{solution.body}</p>
-                <ul className="mb-6 mt-4 grid grid-cols-1 gap-x-4 gap-y-2 border-t border-line pt-4 text-xs leading-relaxed text-mute sm:grid-cols-2">
-                  {solution.idealFor.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-                <Link
-                  href={solution.href}
-                  className="mt-auto inline-flex w-full justify-center border border-accent-hover px-4 py-3 text-sm font-medium text-accent-hover transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] hover:bg-accent-hover hover:text-white active:translate-y-px sm:w-fit sm:justify-start"
-                >
-                  {solution.cta} <span aria-hidden="true" className="ml-2">→</span>
-                </Link>
+      <section id="capabilities" className="border-t border-line bg-canvas-alt py-20 md:py-28">
+        <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-12 px-5 md:grid-cols-12 md:items-start md:gap-16 md:px-8">
+          <div className="md:col-span-7">
+            <p className="micro-label mb-6 text-accent-hover">Manufacturing</p>
+            <h2 className="max-w-3xl text-3xl font-semibold leading-[1.05] tracking-[-0.02em] text-ink md:text-5xl">
+              Products &amp; Manufacturing Capabilities
+            </h2>
+            <div className="mt-10 divide-y divide-line border-y border-line">
+              <article className="py-6">
+                <h3 className="text-xl font-medium tracking-tight text-ink">In-House Manufacturing</h3>
+                <p className="mt-3 max-w-2xl text-base leading-relaxed text-mute">
+                  Rigid Boxes and PR Kit Boxes for premium gifting, launches, and branded campaigns.
+                </p>
               </article>
-            ))}
+              <article className="py-6">
+                <h3 className="text-xl font-medium tracking-tight text-ink">Custom Corrugated Boxes</h3>
+                <p className="mt-3 max-w-2xl text-base leading-relaxed text-mute">
+                  Plain or custom-printed boxes for shipping, storage, and product packaging.
+                </p>
+                <p className="micro-label mt-4 text-accent-hover">MOQ: 1,000 pcs</p>
+              </article>
+              <article className="py-6">
+                <h3 className="text-xl font-medium tracking-tight text-ink">Offset-Printed Folding Cartons</h3>
+                <p className="mt-3 max-w-2xl text-base leading-relaxed text-mute">
+                  High-quality printed cartons for retail products and branded packaging.
+                </p>
+                <p className="micro-label mt-4 text-accent-hover">MOQ: 1,000 pcs</p>
+              </article>
+            </div>
+          </div>
+          <div className="border border-line bg-surface md:col-span-5">
+            <Image
+              src="/assets/img/hero/hero.jpg"
+              alt="Huswell Trading's Quezon City manufacturing floor"
+              width={2272}
+              height={1080}
+              sizes="(max-width: 768px) 100vw, 42vw"
+              className="aspect-[4/5] w-full object-cover"
+            />
           </div>
         </div>
       </section>
 
-      <section id="process" className="border-t border-line bg-canvas py-20 md:py-28">
+      <section id="why-huswell" className="border-t border-line bg-canvas py-20 md:py-28">
         <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-14 px-5 md:grid-cols-12 md:gap-10 md:px-8">
           <div className="md:col-span-4">
             <p className="micro-label mb-6 text-accent-hover">Why choose Huswell Trading</p>
@@ -321,49 +233,6 @@ export default function Page() {
                 <p className="mt-2 text-sm leading-relaxed text-mute">{description}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="border-t border-line bg-canvas py-20 md:py-28">
-        <div className="mx-auto w-full max-w-6xl px-5 md:px-8">
-          <div className="grid grid-cols-1 gap-14 md:grid-cols-12 md:gap-10">
-            <div className="md:col-span-4">
-              <p className="micro-label mb-6 text-accent-hover">Our process</p>
-              <h2 className="text-3xl font-semibold leading-[1.05] tracking-[-0.02em] text-ink md:text-4xl">
-                From packaging idea to production.
-              </h2>
-              <p className="mt-6 text-base leading-relaxed text-mute">
-                Clear requirements, approved specifications, and practical production coordination
-                from the first conversation through pickup or delivery.
-              </p>
-            </div>
-            <div className="divide-y divide-line md:col-span-8">
-              {PROCESS.map(([number, title, body]) => (
-                <article key={number} className="grid grid-cols-1 gap-3 py-6 sm:grid-cols-12 sm:gap-6">
-                  <p className="micro-label text-accent-hover sm:col-span-2">{number}</p>
-                  <div className="sm:col-span-10">
-                    <h3 className="text-xl font-medium tracking-tight text-ink">{title}</h3>
-                    <p className="mt-3 max-w-2xl text-base leading-relaxed text-mute">{body}</p>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-          <div className="mt-16 grid grid-cols-1 items-center gap-12 border-t border-line pt-12 md:grid-cols-12 md:gap-10">
-            <div className="md:col-span-5">
-              <p className="micro-label mb-5 text-accent-hover">Inside the plant</p>
-              <h3 className="text-2xl font-semibold leading-tight tracking-tight text-ink md:text-3xl">
-                Packaging built under one roof in Quezon City.
-              </h3>
-              <p className="mt-5 text-base leading-relaxed text-mute">
-                Our team coordinates design, printing, cutting, lamination, finishing, and quality
-                checking so every project moves forward with a clear production plan.
-              </p>
-            </div>
-            <div className="md:col-span-7">
-              <VideoStory />
-            </div>
           </div>
         </div>
       </section>
