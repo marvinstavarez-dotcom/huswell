@@ -3,6 +3,7 @@ import { Space_Grotesk } from "next/font/google";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import ChatButtons from "@/components/chat-buttons";
+import SplashLoader from "@/components/splash-loader";
 import { businessSchema, SITE_URL } from "@/lib/seo";
 import "./globals.css";
 
@@ -64,6 +65,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={spaceGrotesk.variable}>
       <body className="min-h-full bg-canvas-dark antialiased">
+        <SplashLoader />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(businessSchema).replace(/</g, "\\u003c") }}

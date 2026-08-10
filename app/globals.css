@@ -77,6 +77,25 @@ textarea {
   color: #fff;
 }
 
+@keyframes splash-line {
+  0% {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  50% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  50.01% {
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+  100% {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+}
+
 :focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 3px;
