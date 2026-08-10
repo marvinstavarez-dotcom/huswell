@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-const MINIMUM_DISPLAY_MS = 4500;
+const MINIMUM_DISPLAY_MS = 3000;
 const EXIT_DURATION_MS = 350;
 
 export default function SplashLoader() {
