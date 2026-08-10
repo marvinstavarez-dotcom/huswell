@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { CONTACT } from "@/lib/site-data";
 
-export const SITE_URL = "https://huswelltrading.com";
+export const SITE_URL = "https://www.huswelltrading.com";
 
 const DEFAULT_IMAGE = "/assets/img/hero/hero.jpg";
 
