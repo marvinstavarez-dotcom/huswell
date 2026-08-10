@@ -139,10 +139,10 @@ export default function Page() {
           <div className="md:col-span-5">
             <div className="border border-line bg-surface">
               <Image
-                src="/assets/img/about/cover.webp"
-                alt="Huswell Trading creates custom packaging and printing solutions in Quezon City"
-                width={1137}
-                height={921}
+                src="/images/watch.jpg"
+                alt="Custom Philippine heritage presentation box for a watch"
+                width={1448}
+                height={1086}
                 sizes="(max-width: 768px) 100vw, 42vw"
                 className="aspect-[4/3] w-full object-cover"
               />
@@ -183,10 +183,10 @@ export default function Page() {
           </div>
           <div className="border border-line bg-surface md:col-span-5">
             <Image
-              src="/assets/img/hero/hero.jpg"
-              alt="Huswell Trading's Quezon City manufacturing floor"
-              width={2272}
-              height={1080}
+              src="/images/tumbler.jpg"
+              alt="Custom Philippine heritage gift box with tumbler and accessories"
+              width={1122}
+              height={1402}
               sizes="(max-width: 768px) 100vw, 42vw"
               className="aspect-[4/5] w-full object-cover"
             />
