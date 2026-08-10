@@ -4,6 +4,7 @@ import { CONTACT, SERVICES } from "@/lib/site-data";
 
 const LINKS = [
   { href: "/projects", label: "Projects" },
+  { href: "/company-profile", label: "Company Profile" },
   { href: "/#contact", label: "Get a Free Quote" },
 ];
 

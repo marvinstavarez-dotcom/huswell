@@ -9,6 +9,7 @@ import { CONTACT, SERVICES } from "@/lib/site-data";
 const PAGES = [
   { href: "/#about", label: "About" },
   { href: "/projects", label: "Projects" },
+  { href: "/company-profile", label: "Company Profile" },
   { href: "/#contact", label: "Contact" },
 ];
 

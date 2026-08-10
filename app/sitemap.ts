@@ -4,6 +4,7 @@ import { SITE_URL } from "@/lib/seo";
 const ROUTES = [
   "",
   "/projects",
+  "/company-profile",
   "/premium-packaging",
   "/regular-packaging",
   "/offset-digital-packaging",
