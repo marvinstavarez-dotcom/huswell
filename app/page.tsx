@@ -161,7 +161,7 @@ export default function Page() {
         />
         <div className="absolute inset-0 bg-black/60" />
         <div className="relative mx-auto w-full max-w-6xl px-5 pb-20 pt-32 text-center md:px-8 md:pb-16 md:pt-24 2xl:pb-24 2xl:pt-32">
-          <p className="micro-label mb-6 text-white/70">Made in Philippines</p>
+          <p className="micro-label mb-6 text-white/70">Designed &amp; Made in the Philippines</p>
           <h1 className="mx-auto max-w-4xl text-[clamp(2.75rem,6vw,5rem)] font-semibold leading-[1.02] tracking-[-0.025em] text-white">
             Custom Box Solutions
           </h1>
