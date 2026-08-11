@@ -85,7 +85,7 @@ export default function Footer() {
               </li>
               <li>
                 <a className="transition-colors hover:text-accent-hover" href={CONTACT.phoneHref}>
-                  {CONTACT.phone}
+                  {CONTACT.phoneLabel}
                 </a>
               </li>
               <li className="text-mute">{CONTACT.address.join(", ")}</li>

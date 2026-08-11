@@ -137,7 +137,7 @@ export default function Navbar() {
         <p className="mt-10 pb-8 text-sm text-mute">
           {CONTACT.email}
           <br />
-          {CONTACT.phone}
+          {CONTACT.phoneLabel}
         </p>
       </div>
     </>

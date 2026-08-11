@@ -121,6 +121,7 @@ export const CONTACT = {
   email: "sales@huswelltrading.com",
   name: "Ms. Dianne",
   phone: "09173183354",
+  phoneLabel: "Ms. Dianne — 09173183354",
   phoneHref: "tel:+639173183354",
   facebook: "https://www.facebook.com/423646941093708/",
   instagram: "https://www.instagram.com/huswelltrading/",

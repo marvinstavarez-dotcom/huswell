@@ -1,32 +1,11 @@
-"use client";
-
-import { useState } from "react";
 import { siMessenger, siViber, siWhatsapp } from "simple-icons";
 import { CONTACT } from "@/lib/site-data";
 
 export default function ChatButtons() {
-  const [open, setOpen] = useState(false);
-
   return (
-    <>
-      <div className="fixed bottom-[max(1.25rem,env(safe-area-inset-bottom))] right-[max(1.25rem,env(safe-area-inset-right))] z-30 flex flex-col gap-3 lg:hidden">
-        {open && <ChatLinks />}
-        <button
-          type="button"
-          onClick={() => setOpen(true)}
-          aria-label="Show chat options"
-          aria-expanded={open}
-          title="Chat with Ms. Dianne"
-          className="flex h-12 w-12 items-center justify-center rounded-full bg-ink text-xl text-white shadow-sm transition-transform duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] hover:scale-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
-        >
-          +
-        </button>
-      </div>
-
-      <div className="fixed bottom-[max(1.25rem,env(safe-area-inset-bottom))] right-[max(1.25rem,env(safe-area-inset-right))] z-50 hidden flex-col gap-3 lg:flex">
-        <ChatLinks />
-      </div>
-    </>
+    <div className="fixed bottom-[max(1.25rem,env(safe-area-inset-bottom))] right-[max(1.25rem,env(safe-area-inset-right))] z-50 flex flex-col gap-3">
+      <ChatLinks />
+    </div>
   );
 }
 

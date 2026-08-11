@@ -349,7 +349,7 @@ export default function Page() {
             <p className="mt-6 text-base leading-relaxed text-mute">
               Still need to discuss a requirement? Call {" "}
               <a href={CONTACT.phoneHref} className="text-ink underline decoration-accent underline-offset-4 hover:text-accent-hover">
-                {CONTACT.phone}
+                {CONTACT.phoneLabel}
               </a>{" "}
               or request a custom quote.
             </p>

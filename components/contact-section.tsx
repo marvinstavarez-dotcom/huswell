@@ -73,7 +73,7 @@ export default function ContactSection() {
                   href={CONTACT.phoneHref}
                   className="text-ink underline underline-offset-4 decoration-accent hover:text-accent-hover"
                 >
-                  {CONTACT.phone}
+                  {CONTACT.phoneLabel}
                 </a>
               </p>
               <p className="text-mute">
@@ -157,7 +157,7 @@ export default function ContactSection() {
                 <p className="text-sm text-mute">
                   For urgent orders, call{" "}
                   <a href={CONTACT.phoneHref} className="underline underline-offset-4 decoration-accent">
-                    {CONTACT.phone}
+                    {CONTACT.phoneLabel}
                   </a>
                   .
                 </p>
