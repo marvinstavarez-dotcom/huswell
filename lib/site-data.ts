@@ -119,13 +119,14 @@ export const FAQS = [
 export const CONTACT = {
   address: ["72 Adrian St., North Fairview", "Novaliches, Quezon City"],
   email: "sales@huswelltrading.com",
-  phone: "+63 916 726 1251",
-  phoneHref: "tel:+639167261251",
+  name: "Ms. Dianne",
+  phone: "09173183354",
+  phoneHref: "tel:+639173183354",
   facebook: "https://www.facebook.com/423646941093708/",
   instagram: "https://www.instagram.com/huswelltrading/",
   tiktok: "https://www.tiktok.com/@huswell.trading",
-  whatsapp: "https://wa.me/639167261251",
-  viber: "viber://chat?number=%2B639167261251",
+  whatsapp: "https://wa.me/639173183354",
+  viber: "viber://chat?number=%2B639173183354",
   messenger: "https://www.messenger.com/t/423646941093708",
 };
 

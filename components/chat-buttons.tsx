@@ -13,13 +13,13 @@ export default function ChatButtons() {
         {open && <ChatLinks />}
         <button
           type="button"
-          onClick={() => setOpen(!open)}
-          aria-label={open ? "Close chat options" : "Open chat options"}
+          onClick={() => setOpen(true)}
+          aria-label="Show chat options"
           aria-expanded={open}
-          title="Chat options"
+          title="Chat with Ms. Dianne"
           className="flex h-12 w-12 items-center justify-center rounded-full bg-ink text-xl text-white shadow-sm transition-transform duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] hover:scale-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
         >
-          {open ? "x" : "+"}
+          +
         </button>
       </div>
 
@@ -37,7 +37,8 @@ function ChatLinks() {
         href={CONTACT.messenger}
         target="_blank"
         rel="noreferrer"
-        aria-label="Chat with Huswell Trading on Messenger"
+        aria-label={`Chat with ${CONTACT.name} on Messenger`}
+        title={`Chat with ${CONTACT.name} on Messenger`}
         className="flex h-12 w-12 items-center justify-center rounded-full bg-[#0084FF] text-white shadow-sm transition-transform duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] hover:scale-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-grease"
       >
         <svg viewBox="0 0 24 24" aria-hidden="true" className="h-6 w-6 fill-current">
@@ -48,7 +49,8 @@ function ChatLinks() {
         href={CONTACT.whatsapp}
         target="_blank"
         rel="noreferrer"
-        aria-label="Chat with Huswell Trading on WhatsApp"
+        aria-label={`Chat with ${CONTACT.name} on WhatsApp`}
+        title={`Chat with ${CONTACT.name} on WhatsApp`}
         className="flex h-12 w-12 items-center justify-center rounded-full bg-[#25D366] text-white shadow-sm transition-transform duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] hover:scale-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-grease"
       >
         <svg viewBox="0 0 24 24" aria-hidden="true" className="h-6 w-6 fill-current">
@@ -57,7 +59,8 @@ function ChatLinks() {
       </a>
       <a
         href={CONTACT.viber}
-        aria-label="Chat with Huswell Trading on Viber"
+        aria-label={`Chat with ${CONTACT.name} on Viber`}
+        title={`Chat with ${CONTACT.name} on Viber`}
         className="flex h-12 w-12 items-center justify-center rounded-full bg-[#7360F2] text-white shadow-sm transition-transform duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] hover:scale-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-grease"
       >
         <svg viewBox="0 0 24 24" aria-hidden="true" className="h-6 w-6 fill-current">
