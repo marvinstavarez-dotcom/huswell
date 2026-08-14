@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { CONTACT } from "@/lib/site-data";
 
 const SHEET_NAME = "Lead Tracker";
@@ -16,6 +16,34 @@ type Status = "idle" | "sending" | "sent" | "error";
 export default function ContactSection() {
   const [status, setStatus] = useState<Status>("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const isNotificationOpen = status === "sent" || status === "error";
+
+  useEffect(() => {
+    if (!isNotificationOpen) return;
+
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    closeButtonRef.current?.focus();
+
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setErrorMessage("");
+        setStatus("idle");
+      }
+    }
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.body.style.overflow = originalOverflow;
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isNotificationOpen]);
+
+  function closeNotification() {
+    setErrorMessage("");
+    setStatus("idle");
+  }
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -149,23 +177,6 @@ export default function ContactSection() {
               <Field label="Company name (optional)" name="companyName" placeholder="Company name" />
               <Field label="Email address" name="email" type="email" placeholder="you@company.com" required />
               <Field label="Viber" name="viber" type="tel" placeholder="0917 000 0000" required />
-              {status === "sent" && (
-                <p className="md:col-span-2 text-sm text-ink">
-                  Message sent — thank you. We reply within one working day.
-                </p>
-              )}
-              {status === "error" && (
-                <p className="md:col-span-2 text-sm text-mute">
-                  {errorMessage} Please try again or email us at{" "}
-                  <a
-                    href={`mailto:${CONTACT.email}`}
-                    className="underline underline-offset-4 decoration-accent"
-                  >
-                    {CONTACT.email}
-                  </a>
-                  .
-                </p>
-              )}
               <div className="md:col-span-2 flex flex-col gap-4 sm:flex-row sm:items-center">
                 <button type="submit" className="btn-solid-light w-full sm:w-auto" disabled={status === "sending"}>
                   {status === "sending" ? "Sending…" : "Get Free Quotation"}
@@ -182,6 +193,55 @@ export default function ContactSection() {
           </div>
         </div>
       </div>
+      {isNotificationOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-ink/60 p-5"
+          onMouseDown={closeNotification}
+        >
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="quotation-notification-title"
+            aria-describedby="quotation-notification-description"
+            className="w-full max-w-md border border-line bg-surface p-6 md:p-8"
+            onMouseDown={(event) => event.stopPropagation()}
+          >
+            <p className="micro-label text-accent-hover">
+              {status === "sent" ? "Quotation request" : "Submission failed"}
+            </p>
+            <h2
+              id="quotation-notification-title"
+              className="mt-4 text-2xl font-semibold leading-tight tracking-[-0.02em] text-ink md:text-3xl"
+            >
+              {status === "sent" ? "Quotation request received" : "Unable to send your request"}
+            </h2>
+            <div id="quotation-notification-description" className="mt-4 text-sm leading-relaxed text-mute">
+              {status === "sent" ? (
+                <p>Thank you. We&rsquo;ll reply within one working day.</p>
+              ) : (
+                <p>
+                  {errorMessage} Please try again or email us at{" "}
+                  <a
+                    href={`mailto:${CONTACT.email}`}
+                    className="text-ink underline decoration-accent underline-offset-4 hover:text-accent-hover"
+                  >
+                    {CONTACT.email}
+                  </a>
+                  .
+                </p>
+              )}
+            </div>
+            <button
+              ref={closeButtonRef}
+              type="button"
+              className="btn-solid-light mt-8 w-full sm:w-auto"
+              onClick={closeNotification}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
