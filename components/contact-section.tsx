@@ -3,31 +3,54 @@
 import { useState } from "react";
 import { CONTACT } from "@/lib/site-data";
 
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/mqpzpyag";
+const SHEET_NAME = "Lead Tracker";
+const LEAD_FIELD_HEADERS = {
+  clientName: "Clients Name",
+  companyName: "Company Name",
+  email: "Email",
+  viber: "Viber",
+};
 
 type Status = "idle" | "sending" | "sent" | "error";
 
 export default function ContactSection() {
   const [status, setStatus] = useState<Status>("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
 
     setStatus("sending");
+    setErrorMessage("");
     const data = new FormData(form);
-    data.set("_subject", "Huswell Trading website — contact message");
+    const payload = {
+      leadId: crypto.randomUUID(),
+      sheetTab: SHEET_NAME,
+      fields: {
+        [LEAD_FIELD_HEADERS.clientName]: String(data.get("clientName") ?? ""),
+        [LEAD_FIELD_HEADERS.companyName]: String(data.get("companyName") ?? ""),
+        [LEAD_FIELD_HEADERS.email]: String(data.get("email") ?? ""),
+        [LEAD_FIELD_HEADERS.viber]: String(data.get("viber") ?? ""),
+      },
+      fieldTypes: {
+        [LEAD_FIELD_HEADERS.viber]: "phone",
+      },
+    };
 
     try {
-      const res = await fetch(FORMSPREE_ENDPOINT, {
+      const response = await fetch("/api/leads", {
         method: "POST",
-        body: data,
-        headers: { Accept: "application/json" },
+        body: JSON.stringify(payload),
+        headers: { "Content-Type": "application/json" },
       });
-      if (!res.ok) throw new Error("formspree rejected the submission");
+      const result = (await response.json()) as { error?: string };
+      if (!response.ok) throw new Error(result.error || "Unable to save your inquiry.");
+
       setStatus("sent");
       form.reset();
-    } catch {
+    } catch (error) {
+      setErrorMessage(error instanceof Error ? error.message : "Unable to save your inquiry.");
       setStatus("error");
     }
   }
@@ -42,9 +65,19 @@ export default function ContactSection() {
               Let&rsquo;s talk packaging.
             </h2>
             <p className="mt-6 text-sm leading-relaxed text-mute">
-              Tell us about your project and we&rsquo;ll come back with options — usually within
-              one working day. For urgent orders, call us directly.
+              Share your contact details and we&rsquo;ll come back with options — usually within one
+              working day. For urgent orders, call us directly.
             </p>
+            <div className="mt-8 border-t border-line pt-6">
+              <p className="micro-label text-accent-hover">Special offer</p>
+              <p className="mt-3 text-base font-medium leading-relaxed text-ink">
+                Free Website Landing Page on Qualified Orders
+              </p>
+              <p className="mt-2 text-sm leading-relaxed text-mute">
+                Request a free quotation today. Landing-page eligibility and scope are confirmed
+                after quotation.
+              </p>
+            </div>
             <div className="mt-10 space-y-5 text-sm">
               <p className="text-mute">
                 <span className="block text-[11px] font-medium uppercase tracking-[0.22em] text-ink">
@@ -112,27 +145,10 @@ export default function ContactSection() {
 
           <div className="md:col-span-7">
             <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-8 md:grid-cols-2">
-              <Field label="Name" name="name" placeholder="Juan Dela Cruz" required />
+              <Field label="Client&rsquo;s name" name="clientName" placeholder="Juan Dela Cruz" required />
+              <Field label="Company name (optional)" name="companyName" placeholder="Company name" />
               <Field label="Email address" name="email" type="email" placeholder="you@company.com" required />
-              <div className="md:col-span-2">
-                <Field label="Phone number (optional)" name="phone" type="tel" placeholder="0917 000 0000" />
-              </div>
-              <div className="md:col-span-2">
-                <label
-                  htmlFor="message"
-                  className="mb-4 block text-[11px] font-medium uppercase tracking-[0.22em] text-mute"
-                >
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={5}
-                  required
-                  placeholder="Tell us about your packaging project — box type, quantity, finish, target date…"
-                  className="min-h-32 w-full resize-y border border-line bg-surface px-4 py-3 text-base text-ink placeholder:text-mute focus:border-accent focus:outline-none"
-                />
-              </div>
+              <Field label="Viber" name="viber" type="tel" placeholder="0917 000 0000" required />
               {status === "sent" && (
                 <p className="md:col-span-2 text-sm text-ink">
                   Message sent — thank you. We reply within one working day.
@@ -140,7 +156,7 @@ export default function ContactSection() {
               )}
               {status === "error" && (
                 <p className="md:col-span-2 text-sm text-mute">
-                  Something went wrong — please try again or email us at{" "}
+                  {errorMessage} Please try again or email us at{" "}
                   <a
                     href={`mailto:${CONTACT.email}`}
                     className="underline underline-offset-4 decoration-accent"
@@ -152,7 +168,7 @@ export default function ContactSection() {
               )}
               <div className="md:col-span-2 flex flex-col gap-4 sm:flex-row sm:items-center">
                 <button type="submit" className="btn-solid-light w-full sm:w-auto" disabled={status === "sending"}>
-                  {status === "sending" ? "Sending…" : "Send message"}
+                  {status === "sending" ? "Sending…" : "Get Free Quotation"}
                 </button>
                 <p className="text-sm text-mute">
                   For urgent orders, call{" "}

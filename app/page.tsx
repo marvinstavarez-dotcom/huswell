@@ -85,19 +85,22 @@ export default function Page() {
           sizes="100vw"
           className="absolute inset-0 h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/60" />
         <div className="relative mx-auto w-full max-w-6xl px-5 pb-20 pt-32 text-center md:px-8 md:pb-16 md:pt-24 2xl:pb-24 2xl:pt-32">
-          <p className="micro-label mb-6 text-white/70">Designed &amp; Made in the Philippines</p>
+          <p className="micro-label mb-6 text-white/80">Designed &amp; Made in the Philippines</p>
           <h1 className="mx-auto max-w-4xl text-[clamp(2.75rem,6vw,5rem)] font-semibold leading-[1.02] tracking-[-0.025em] text-white">
             Custom Box Solutions
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/85 md:max-w-3xl">
-            Huswell Trading primarily serves small and medium enterprises (SMEs) across the
-            Philippines, while also catering to established local and international brands.
+          <p className="mx-auto mt-6 max-w-3xl text-xl font-medium leading-relaxed text-white md:text-2xl">
+            Free Website Landing Page on Qualified Packaging Orders
+          </p>
+          <p className="mx-auto mt-3 max-w-2xl text-base leading-relaxed text-white/90 md:max-w-3xl">
+            Request your free packaging quotation today. Landing-page eligibility and scope are
+            confirmed after quotation.
           </p>
           <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row sm:flex-wrap sm:items-center md:mt-8">
             <Link href="/#contact" className="btn-solid-dark w-full sm:w-auto">
-              Free box consultation
+              Get Free Quotation
             </Link>
             <Link href="#capabilities" className="btn-line-dark w-full sm:w-auto">
               Manufacturing capabilities
