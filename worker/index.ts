@@ -1,7 +1,25 @@
 const GOOGLE_APPS_SCRIPT_ENDPOINT =
   "https://script.google.com/macros/s/AKfycbz8C4kyQ-p6D3yiUObszYKPdRVgfwe51KX85n1uq5ILuC8mMceZxizdvTffUb12J2Ct/exec";
 
-export async function POST(request: Request) {
+export interface Env {
+  ASSETS: { fetch(request: Request): Promise<Response> };
+}
+
+const worker = {
+  async fetch(request: Request, env: Env): Promise<Response> {
+    const url = new URL(request.url);
+
+    if (request.method === "POST" && url.pathname === "/api/leads") {
+      return handleLead(request);
+    }
+
+    return env.ASSETS.fetch(request);
+  },
+};
+
+export default worker;
+
+async function handleLead(request: Request): Promise<Response> {
   let payload: unknown;
 
   try {
@@ -15,7 +33,6 @@ export async function POST(request: Request) {
       method: "POST",
       body: JSON.stringify(payload),
       headers: { "Content-Type": "application/json" },
-      cache: "no-store",
     });
     const result = (await scriptResponse.json().catch(() => null)) as { error?: string; ok?: boolean } | null;
 
